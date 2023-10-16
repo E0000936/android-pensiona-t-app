@@ -1,0 +1,15 @@
+ext {
+    PROFUTURO_DEVELOP_SERVER = "\"https://api.dev.profuturo.mx/\""
+    BASIC_AUTH2_DEVELOP = "\"Basic R0cza2FXNDlrakpuWHVsQUpWYU14R1d6MFVZMU04b286RVJSRnFIUXlLdVRtR2tMUQ==\""
+
+    PROFUTURO_STAGE_SERVER = "\"https://api.qa.profuturo.mx/\""
+    BASIC_AUTH2_STAGE = "\"Basic MjFnWWpTSjdqaWU2R1VDVEdwUVhZeVROMURVQ2tRQk86ZzRRUWtnaU5yMXhjcWFvMQ==\""
+
+    PROFUTURO_PRO_SERVER = "\"https://api.profuturo.mx/\""
+    BASIC_AUTH2_PRO = "\"Basic NDZYdGp4dnhRd3dxTk9sU1pQTnFJd3BveFdiYVNPRHo6VWlzbGdhWGR1YVJHTUl6YQ==\""
+
+    KEYSTORE_PATH = "Profuturo_Oficial.key"
+    KEYSTORE_PASSWORD = "Pr0fu7ur0M0v1l4pps"
+    KEYSTORE_KEY_ALIAS = "profuturo movil oficial"
+    KEYSTORE_KEY_PASSWORD = "Pr0fu7ur0M0v1l4pps"
+}

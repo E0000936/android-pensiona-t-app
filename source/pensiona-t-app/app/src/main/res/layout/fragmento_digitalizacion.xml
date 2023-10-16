@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_principal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ImageView
+        android:id="@+id/img_digitalizacion_empleado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/busqueda_imagen_empleado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icono_empleado" />
+
+    <TextView
+        android:id="@+id/txt_digitalizacion_numero_empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/img_digitalizacion_empleado"
+        app:layout_constraintTop_toTopOf="@+id/img_digitalizacion_empleado" />
+
+    <TextView
+        android:id="@+id/txt_digitalizacion_titular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_tramite_linea1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:background="@color/colorGris"
+        android:rotation="0"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_digitalizacion_empleado" />
+
+    <TextView
+        android:id="@+id/txt_digitalizacion_instrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/digitalizacion_instrucciones"
+        android:textAlignment="center"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_tramite_linea1" />
+
+    <Button
+        android:id="@+id/btn_digitalizar_siguiente"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/fondo_boton_gris"
+        android:text="@string/componente_familiar_siguiente"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_digitalizar_cancelar"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/fondo_boton_borde_azul"
+        android:text="@string/componente_familiar_cancelar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimario"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_digitalizar_siguiente"
+        app:layout_constraintTop_toTopOf="@+id/btn_digitalizar_siguiente" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_digitalizar_contenedor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_digitalizacion_instrucciones">
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_documento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorAzulCeruleo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/recycler_digitalizacion_documentos"
+            app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_tramite_titulo1"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/digitalizacion_documentos_obligatorios"
+            android:textColor="@color/colorAzulGrisaceo"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/view_digitalizacion_circulo_rojo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_digitalizacion_documentos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="36dp"
+            android:padding="0dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_tramite_titulo1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineIzquierda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_digitalizacion_circulo_rojo"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="78dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/circulo_rojo_obligatorios"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_tramite_titulo1" />
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_ayuda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="65dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorAzulGrisaceo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toBottomOf="@+id/txt_digitalizacion_documento"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageButton
+            android:id="@+id/btn_digitalizacion_capturar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="65dp"
+            android:background="@drawable/fondo_boton_camara"
+            android:contentDescription="@string/login_imagen_edificio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toBottomOf="@+id/txt_digitalizacion_ayuda" />
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_requeridas"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="65dp"
+            android:text="@string/digitalizacion_captura_requerida"
+            android:textColor="@color/colorAzulGrisaceo"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toBottomOf="@+id/btn_digitalizacion_capturar" />
+
+        <GridView
+            android:id="@+id/grid_digitalizacion_capturas"
+            android:layout_width="398dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toBottomOf="@+id/txt_digitalizacion_requeridas">
+
+        </GridView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_digitalizacion_observaciones"
+            style="@style/InputLayoutCaja"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="50dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            app:counterEnabled="true"
+            app:counterMaxLength="200"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_digitalizacion_observaciones"
+                style="@style/EditTextCaja"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:gravity="top"
+                android:imeOptions="actionDone|flagNoEnterAction|flagNoExtractUi"
+                android:inputType="text|textMultiLine"
+                android:maxLength="200"
+                android:scrollbars="vertical"
+                android:textColor="@color/colorAzulGrisaceo"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGris"
+        app:layout_constraintBottom_toTopOf="@+id/btn_digitalizar_siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view_tramite_linea1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_peticion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:textColor="@color/colorAzulGrisaceo"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            tools:text="Thiruvananthapuram" />
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_tramite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:textColor="@color/colorAzulGrisaceo"
+            android:textSize="13sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/txt_digitalizacion_subtramite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:textColor="@color/colorAzulGrisaceo"
+            android:textSize="13sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

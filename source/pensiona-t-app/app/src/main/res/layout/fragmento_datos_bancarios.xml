@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_datos_bancarios"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <View
+        android:id="@+id/separador"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGris"
+        android:rotation="0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bancario_cancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_bancario_cancelar"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/fondo_boton_borde_azul"
+        android:text="@string/componente_familiar_cancelar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimario"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_bancario_siguiente"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <Button
+        android:id="@+id/btn_bancario_siguiente"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/fondo_boton_gris"
+        android:enabled="false"
+        android:text="@string/componente_familiar_siguiente"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_datos_bancarios_contenido"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="29dp"
+        android:paddingStart="65dp"
+        android:paddingEnd="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/separador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvObligatorios"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/formulario_general_campos_obligatorios"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideFinal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_banco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/formulario_banco"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextoElemento"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_banco"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_banco"
+            app:layout_constraintStart_toStartOf="@+id/spinner_banco" />
+
+        <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+            android:id="@+id/spinner_banco"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/fondo_spinner_borde"
+            android:drawSelectorOnTop="false"
+            android:dropDownVerticalOffset="-150dp"
+            android:focusedByDefault="true"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toStartOf="@+id/guideFinal"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvObligatorios"
+            tools:targetApi="o" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cuenta_clabe"
+            style="@style/InputLayoutCaja"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineParent"
+            app:layout_constraintStart_toEndOf="@+id/guidelinelimite3"
+            app:layout_constraintTop_toBottomOf="@+id/tvObligatorios">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_cuenta_clabe"
+                style="@style/EditTextCaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:digits="0123456789"
+                android:enabled="false"
+                android:focusableInTouchMode="true"
+                android:hint="@string/formulario_cuenta_hint"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="18"
+                android:nextFocusLeft="@id/edt_referencias_apmaterno2"
+                android:nextFocusRight="@id/edt_referencias_celular2"
+                android:nextFocusDown="@id/edt_referencias_celular2"
+                android:nextFocusForward="@id/edt_referencias_celular2"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinelimite3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="697dp"
+            android:layout_marginEnd="447dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.66"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="65dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="1.0"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideFinal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="413dp"
+            android:layout_marginEnd="873dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_tipo_cuenta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/formulario_tipo_cuenta"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextoElemento"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/spinner_tipo_cuenta"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_tipo_cuenta"
+            app:layout_constraintStart_toStartOf="@+id/spinner_tipo_cuenta" />
+
+        <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+            android:id="@+id/spinner_tipo_cuenta"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/fondo_spinner_borde"
+            android:enabled="false"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner_banco"
+            app:layout_constraintEnd_toStartOf="@+id/guidelinelimite3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/guideFinal"
+            app:layout_constraintTop_toTopOf="@+id/spinner_banco" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

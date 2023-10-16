@@ -1,0 +1,26 @@
+buildscript {
+    ext {
+        agp_version = '8.1.2'
+        agp_version1 = '8.1.0'
+    }
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$agp_version1"
+        classpath "io.realm:realm-gradle-plugin:10.15.1"
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
+    }
+}
+apply from: 'gradle-scripts/dependencies.gradle'
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

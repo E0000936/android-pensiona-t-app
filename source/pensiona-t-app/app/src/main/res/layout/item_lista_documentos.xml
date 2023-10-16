@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/celda_digitalizacion_uno"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginBottom="5dp"
+    android:focusable="true"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="4dp"
+    card_view:layout_constraintBottom_toBottomOf="parent"
+    card_view:layout_constraintEnd_toEndOf="parent"
+    card_view:layout_constraintStart_toStartOf="parent"
+    card_view:layout_constraintTop_toTopOf="parent">
+
+    <RelativeLayout
+        android:id="@+id/celda_digitalizacion_dos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/circulo_rojo_digitalizacion_celda"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/circulo_rojo_obligatorios"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layout_digitalizacion_celda"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="26dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_digitalizacion_celda_documento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:textColor="@color/colorAzulCeruleo"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="03 COPIA DE ACTA DE MATRIMONIO*" />
+
+            <TextView
+                android:id="@+id/txt_digitalizacion_celda_capturas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:gravity="bottom"
+                android:paddingBottom="1dp"
+                android:textSize="14sp"
+                tools:text="0 de 2 capturas" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/flecha_item"
+            android:layout_width="6dp"
+            android:layout_height="12dp"
+            android:layout_alignEnd="@id/layout_digitalizacion_celda"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_flecha_documentos" />
+
+        <ImageView
+            android:id="@+id/img_completado"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignEnd="@id/layout_digitalizacion_celda"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_check_completado" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

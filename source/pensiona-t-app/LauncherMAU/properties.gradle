@@ -1,0 +1,9 @@
+ext {
+    MAU_DEV_SERVER = "https://api.dev.profuturo.mx/"
+    MAU_QA_SERVER = "https://api.qa.profuturo.mx/"
+    MAU_RELEASE_SERVER = "https://api.profuturo.mx/"
+
+    MAU_API_TOKEN_DEV_SERVER = "IElrakdYS0FOVkhuejVvRHJ2R2RCQm55SnNGaUM4WmltOklHZmZjcERtTXlReWlXb0k="
+    MAU_API_TOKEN_QA_SERVER = "IElrakdYS0FOVkhuejVvRHJ2R2RCQm55SnNGaUM4WmltOklHZmZjcERtTXlReWlXb0k="
+    MAU_API_TOKEN_RELEASE_SERVER = "ZkZ6SFl6VkdKWmVwVHZTZ2JuYXVaNk5zR0xMODVEMUE6cFMxN2FJQWkyTHRyNUFGdw=="
+}

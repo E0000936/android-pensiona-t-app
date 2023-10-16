@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.dev.profuturo.mx</domain>
+        <domain includeSubdomains="true">api.qa.profuturo.mx</domain>
+        <domain includeSubdomains="true">api.profuturo.mx</domain>
+        <!--<trust-anchors>
+            <certificates src="@raw/apiprofupublico"/>
+            <certificates src="@raw/desarrollo"/>
+            <certificates src="@raw/qa"/>
+        </trust-anchors>
+        &lt;!&ndash; periodo de vencimiento del certificado &ndash;&gt;
+        <pin-set expiration="2021-05-24">
+            &lt;!&ndash; Nota: estos valores pueden cambiar con el tiempo, así que asegúrese
+             de usar los valores que obtuvo de los certificados recientes &ndash;&gt;
+            <pin digest="SHA-256">yt8q459DypVCOinvMEwnoG7/UPd2maz8JYC4BsUqgWQ=</pin>
+            &lt;!&ndash; backup pin &ndash;&gt;
+            <pin digest="SHA-256">5kJvNEMw0KjrCAu7eXY5HZdvyCS13BbA0VJG1RSP91w=</pin>
+        </pin-set>-->
+    </domain-config>
+</network-security-config>

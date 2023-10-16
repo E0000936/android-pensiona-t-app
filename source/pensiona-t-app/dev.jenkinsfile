@@ -1,0 +1,73 @@
+// Def Pipeline Android
+pipeline {
+    agent any
+
+    // Stages to Build APK
+    stages {
+
+        // Build Gradle
+        stage('Buils app with Gradle') {
+            steps {
+                git branch: 'develop', url: 'https://steps.everis.com/git/PROFUTURO/android-api.git', credentialsId: 'profuturo3-android-token'
+                echo "Building Android app using gradle"
+                // Usando el gradle wrapper incluido en el repositorio
+                sh "chmod +x gradlew"
+                sh "./gradlew --no-daemon clean build -x test"
+                echo "Finishes building gradle"
+            }
+        }
+
+        // Static Code Analyze
+        //stage('Sonar Quality Check') {
+        //    steps {
+        //        echo "Running sonar"
+                // sh "chmod +x gradlew"
+                // sh "./gradlew --no-daemon --info sonarqube -x test"
+        //        sh "./gradlew --no-daemon testDebugUnitTest testDebugUnitTestCoverage sonarqube"
+        //    }
+        //}
+
+        // Deploy to AirWatch
+        stage('Distribute apk to AirWatch'){
+            steps{
+                script {
+                    echo "Uploading apk file to AirWatch"
+                    sh "chmod +x jq"
+                    // la configuracion actual de gradle construye el apk para las distintas variantes de construccion
+                    // app/build/outputs/apk/debug/Pensiona-T-debug.apk // Desarrollo
+                    // app/build/outputs/apk/staging/Pensiona-T-staging.apk // Pruebas
+                    // app/build/outputs/apk/release/Pensiona-T-release.apk // Produccion
+                    def mensajeError = sh returnStdout: true, script: 'bash uploadToAirwatch.sh app/build/outputs/apk/staging/Pensiona-T-staging.apk'
+                    echo "Validate response sh"
+                    echo mensajeError
+
+                    // Use SUCCESS FAILURE or ABORTED
+                    if (mensajeError == "null") {
+                        echo "An error occurred when execute upload airwatch"
+                        currentBuild.result = "FAILURE"
+                        throw new Exception(mensajeError)
+                        // do not use the following, as it does not trigger post steps (i.e. the failure step)
+                        // error "your reason here"
+
+                    } else {
+                        echo "Upload airwatch"
+                        currentBuild.result = "SUCCESS"
+                    }
+                }
+            }
+            post {
+                success {
+                    script {
+                        echo "Finished: SUCCESS"
+                    }
+                }
+                failure {
+                    script {
+                        echo "Finished: FAILURE"
+                    }
+                }
+            }
+        }
+
+   }
+}

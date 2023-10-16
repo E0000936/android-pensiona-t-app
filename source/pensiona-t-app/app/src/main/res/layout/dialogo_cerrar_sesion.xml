@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="303dp"
+        android:layout_height="326dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_cerrar_sesion_alerta"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/ic_icons_alerta"
+            android:contentDescription="@string/cerrar_sesion_icono_alerta"
+            app:layout_constraintBottom_toTopOf="@+id/txt_cerrar_sesion_titulo"
+            app:layout_constraintEnd_toEndOf="@+id/txt_cerrar_sesion_titulo"
+            app:layout_constraintStart_toStartOf="@+id/txt_cerrar_sesion_titulo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <TextView
+            android:id="@+id/txt_cerrar_sesion_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_horizontal"
+            android:text="@string/cerrar_sesion_titulo"
+            android:textColor="@color/colorTextSubtitle"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/txt_cerrar_sesion_aviso"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_cerrar_sesion_alerta" />
+
+        <TextView
+            android:id="@+id/txt_cerrar_sesion_aviso"
+            android:layout_width="260dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center_horizontal"
+            android:text="@string/cerrar_sesion_aviso"
+            android:textColor="@color/colorGrisMedio"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cerrar_sesion_titulo" />
+
+        <TextView
+            android:id="@+id/txt_cerrar_sesion_confirmacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/cerrar_sesion_confirmación"
+            android:textColor="@color/colorGrisMedio"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cerrar_sesion_aviso" />
+
+        <Button
+            android:id="@+id/btn_cerrar_sesion_no"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/fondo_boton_borde_azul"
+            android:gravity="center"
+            android:text="@string/cerrar_sesion_no"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimario"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cerrar_sesion_confirmacion" />
+
+        <Button
+            android:id="@+id/btn_cerrar_sesion_si"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/fondo_boton_azul"
+            android:text="@string/cerrar_sesion_si"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_cerrar_sesion_no"
+            app:layout_constraintTop_toBottomOf="@+id/txt_cerrar_sesion_confirmacion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

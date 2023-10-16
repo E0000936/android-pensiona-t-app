@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondoGris"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_login_edificio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/login_imagen_edificio"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineAbajo"
+        app:layout_constraintEnd_toStartOf="@+id/division"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+        app:srcCompat="@drawable/building_img" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="961dp"
+        android:layout_marginBottom="395dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.13"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineAbajo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="594dp"
+        android:layout_marginEnd="1279dp"
+        android:layout_marginBottom="68dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_login_profuturo"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="63dp"
+        android:contentDescription="@string/login_logo_profuturo"
+        app:layout_constraintBottom_toTopOf="@+id/txt_login_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <TextView
+        android:id="@+id/txt_login_titulo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:text="@string/login_titulo"
+        android:textColor="@color/colorTextSubtitle"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/layout_login_usuario_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division"
+        app:layout_constraintTop_toBottomOf="@+id/img_login_profuturo"
+        tools:targetApi="o" />
+
+    <RelativeLayout
+        android:id="@+id/layout_login_contrasena_error"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division"
+        app:layout_constraintTop_toBottomOf="@+id/guideline5">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_login_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/TextLabel"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_login_contrasena"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:autofillHints="password"
+                android:digits="0123456789abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ@#_-/*$¡¿=+"
+                android:ems="10"
+                android:hint="@string/login_hint_contrasena"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:nextFocusLeft="@+id/btn_login_ingresar"
+                android:nextFocusRight="@+id/edt_login_usuario"
+                android:nextFocusUp="@+id/edt_login_usuario"
+                android:nextFocusDown="@+id/btn_login_ingresar"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:theme="@style/MyEditText"
+                tools:targetApi="o" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/img_login_contrasena_error"
+            android:layout_width="17dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/login_icono_alerta_error"
+            android:paddingEnd="5dp"
+            android:src="@drawable/icono_alerta_roja"
+            android:visibility="gone"
+            tools:ignore="RtlSymmetry" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_login_usuario_error"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:gravity="start"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division"
+        app:layout_constraintTop_toBottomOf="@+id/txt_login_titulo">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_login_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/TextLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_login_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignParentTop="true"
+                android:autofillHints="username"
+                android:digits="0123456789abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                android:ems="10"
+                android:hint="@string/login_hint_usuario"
+                android:inputType="textPersonName"
+                android:maxLength="8"
+                android:nextFocusLeft="@+id/edt_login_contrasena"
+                android:nextFocusDown="@+id/edt_login_contrasena"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:theme="@style/MyEditText"
+                tools:targetApi="o" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/img_login_usuario_error"
+            android:layout_width="17dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@string/login_icono_alerta_error"
+            android:paddingEnd="5dp"
+            android:src="@drawable/icono_alerta_roja"
+            android:visibility="gone"
+            tools:ignore="RtlSymmetry" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_login_ingresar"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:background="@drawable/fondo_boton_gris"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/login_ingresar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorFondo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_login_version"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division"
+        app:layout_constraintTop_toBottomOf="@+id/layout_login_contrasena_error" />
+
+    <TextView
+        android:id="@+id/txt_login_version"
+        style="@style/TextStyle2"
+        android:layout_width="300dp"
+        android:layout_height="19dp"
+        android:gravity="bottom|center_horizontal"
+        android:text="@string/login_version"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineAbajo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/division" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent=".5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

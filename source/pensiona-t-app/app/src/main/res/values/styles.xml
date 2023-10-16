@@ -1,0 +1,144 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema de aplicación base. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        &lt;!&ndash; Personaliza tu tema aquí. &ndash;&gt;
+        <item name="colorPrimary">@color/colorPrimario</item>
+        <item name="colorPrimaryDark">@color/colorPrimarioObscuro</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Habilitar la Toolbar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimario</item>
+        <item name="colorPrimaryDark">@color/colorPrimarioObscuro</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBarOverlay">false</item>
+    </style>
+
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingLeft">39dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">9dp</item>
+        <item name="android:paddingRight">39dp</item>
+        <item name="android:textSize">13.5sp</item>
+        <item name="android:elevation" tools:ignore="NewApi">2dp</item>
+        <item name="android:background">@drawable/fondo_boton</item>
+    </style>
+
+    <style name="ButtonStyleYellow" parent="@style/ButtonStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@drawable/fondo_boton_siguiente</item>
+    </style>
+
+    <style name="InputBoxPrimaryOn">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/colorPrimarioObscuro</item>
+    </style>
+
+    <style name="InputLabelDisabled">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textColor">@color/colorListaTexto</item>
+    </style>
+
+    <style name="TitleActionBar">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#4a4a4a</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="SubtitleActionBar">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#4a4a4a</item>
+    </style>
+
+    <style name="InputBoxLabelOn">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorTextoElemento</item>
+    </style>
+
+    <style name="TextStyle2">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimarioObscuro</item>
+    </style>
+
+    <style name="SketchMeasureSize">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <!-- Dialog Progress -->
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Estilo etiqueta error -->
+    <style name="MyErrorText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/colorRojoVívido</item>
+    </style>
+
+    <!-- Input field style -->
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorGrisClaro</item>
+        <item name="colorControlActivated">@color/colorPrimario</item>
+    </style>
+
+    <style name="EditTextCaja" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorGrisClaro</item>
+        <item name="colorControlActivated">@color/colorAzulGrisaceo</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:state_single">true</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimario</item>
+    </style>
+
+    <style name="ThemeSpinner">
+        <item name="colorAccent">@color/colorAzulCeruleo</item>
+        <item name="colorControlNormal">@color/colorTextoSecondario</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="InputLayoutCaja" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/colorAzulCeruleo</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+</resources>

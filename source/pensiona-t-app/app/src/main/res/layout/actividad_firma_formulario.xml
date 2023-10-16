@@ -1,0 +1,2104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedor_firma"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo"
+    tools:context=".presentation.firmaFormulario.FormatoFormularioActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarFirma"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_principal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackgroundFloating"
+            android:elevation="4dp"
+            android:minHeight="75dp"
+            app:layout_collapseMode="parallax">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_barra_principal_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/firma_titulo"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_barra_principal_subtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/formulario_identificación"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/text_barra_principal_titulo"
+                    app:layout_constraintStart_toStartOf="@+id/text_barra_principal_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/text_barra_principal_titulo" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_firma_atras"
+                    android:layout_width="52dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="27dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imss"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/flecha_atras" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_instrucciones_firma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firma_instrucciones"
+        android:textAlignment="center"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_firma_numero_empleado" />
+
+    <TextView
+        android:id="@+id/tv_firma_numero_empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tramite_empleado"
+        app:layout_constraintStart_toEndOf="@+id/img_tramite_empleado"
+        app:layout_constraintTop_toTopOf="@+id/img_tramite_empleado" />
+
+    <ImageView
+        android:id="@+id/img_tramite_empleado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/busqueda_imagen_empleado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarFirma"
+        app:srcCompat="@drawable/icono_empleado" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorFondo"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_instrucciones_firma">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_firma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="65dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/img_login_profuturo"
+                    android:layout_width="222dp"
+                    android:layout_height="71dp"
+                    android:layout_marginTop="45dp"
+                    android:contentDescription="@string/login_logo_profuturo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_profuturosol" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_numero"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvApMaterno"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/separador2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvNoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView9"
+                    app:layout_constraintEnd_toEndOf="@+id/tvApMaterno"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApMaterno" />
+
+                <TextView
+                    android:id="@+id/tvColonia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_colonia"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvColoniaRealm"
+                    app:layout_constraintStart_toStartOf="@+id/tvColoniaRealm"
+                    app:layout_constraintTop_toBottomOf="@+id/separador2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvColoniaRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvColonia"
+                    app:layout_constraintEnd_toStartOf="@+id/tvCpRealm"
+                    app:layout_constraintStart_toEndOf="@+id/tvNoRealm"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApMaterno" />
+
+                <TextView
+                    android:id="@+id/tvCP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/cp"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNacionalidad"
+                    app:layout_constraintStart_toStartOf="@+id/tvNacionalidad"
+                    app:layout_constraintTop_toBottomOf="@+id/separador2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCpRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="15dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvCP"
+                    app:layout_constraintEnd_toEndOf="@+id/tvCP"
+                    app:layout_constraintStart_toStartOf="@+id/tvCP" />
+
+                <TableLayout
+                    android:id="@+id/regimen_firma"
+                    android:layout_width="175dp"
+                    android:layout_height="83dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="22dp"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="175dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="#142e5c"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_login_profuturo"
+                        app:layout_constraintEnd_toStartOf="@+id/regimen_firma"
+                        app:layout_constraintStart_toEndOf="@+id/img_login_profuturo"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="170dp"
+                            android:layout_column="0"
+                            android:gravity="center_horizontal"
+                            android:padding="3dip"
+                            android:text="@string/regimen_seguridad"
+                            android:textColor="@android:color/white"
+                            android:textSize="9sp"
+                            tools:ignore="SmallSp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:divider="@drawable/divisor"
+                        android:showDividers="middle"
+                        android:stretchColumns="*">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-1dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:text="@string/imss"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/id_tipo_regimen"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp"
+                                tools:text="@string/imss" />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:text="@string/isste"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp" />
+
+                            <TextView
+                                android:id="@+id/id_tipo_regimen2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp"
+                                tools:text="@string/imss" />
+                        </LinearLayout>
+                    </TableRow>
+                </TableLayout>
+
+                <TextView
+                    android:id="@+id/textViewTipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_titulo"
+                    android:textColor="#142e5c"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/regimen_firma" />
+
+                <TextView
+                    android:id="@+id/tvDatos"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#142e5c"
+                    android:gravity="center_horizontal"
+                    android:text="@string/datos_solicitante"
+                    android:textColor="#fffffe"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTipo" />
+
+                <TextView
+                    android:id="@+id/tvReferencias1"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="350dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="#142e5c"
+                    android:paddingStart="64dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/firma_formulario_referencias_uno"
+                    android:textColor="#fffffe"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvReferencias2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDatos" />
+
+                <TextView
+                    android:id="@+id/tvReferencias2"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="230dp"
+                    android:background="#142e5c"
+                    android:paddingStart="64dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/firma_formulario_referencias_dos"
+                    android:textColor="#fffffe"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvAviso"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineDerecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1100dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintGuide_percent="0.69"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewLimite"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="#f1af2a"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent=".33" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="#142e5c"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewLimite"
+                    app:layout_constraintTop_toTopOf="@+id/textViewLimite" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1100dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintGuide_percent="0.33"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAviso"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/privacidad"
+                    android:textColor="#142e5c"
+                    android:textSize="8sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewLimite"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvFirmaAviso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/firma_constar"
+                    android:textColor="#142e5c"
+                    android:textSize="8sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvAviso"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="SmallSp" />
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="326dp"
+                    android:layout_height="83dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="22dp"
+                    android:divider="@drawable/divisor"
+                    android:showDividers="middle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="175dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:background="#142e5c"
+                        android:gravity="center_horizontal"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_login_profuturo"
+                        app:layout_constraintEnd_toStartOf="@+id/regimen_firma"
+                        app:layout_constraintStart_toEndOf="@+id/img_login_profuturo"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="175dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="3dip"
+                            android:text="@string/seguridad_social"
+                            android:textColor="@android:color/white"
+                            android:textSize="9sp"
+                            tools:ignore="SmallSp" />
+
+                        <TextView
+                            android:layout_width="175dp"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="3dip"
+                            android:text="@string/folio_identificador"
+                            android:textColor="@android:color/white"
+                            android:textSize="9sp"
+                            tools:ignore="SmallSp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-1dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvfirma_nss"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp"
+                                tools:text="@string/imss" />
+
+                            <TextView
+                                android:id="@+id/tvfirma_folio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/fondo_tabla"
+                                android:padding="8dp"
+                                android:textAlignment="center"
+                                android:textColor="#142e5c"
+                                android:textSize="9sp"
+                                tools:ignore="SmallSp"
+                                tools:text="@string/imss" />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_weight="1"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:id="@+id/tvfirma_nss2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/fondo_tabla"
+                            android:padding="8dp"
+                            android:textAlignment="center"
+                            android:textColor="#142e5c"
+                            android:textSize="9sp"
+                            tools:ignore="SmallSp"
+                            tools:text="@string/imss" />
+
+                        <TextView
+                            android:id="@+id/tvfirma_folio2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/fondo_tabla"
+                            android:padding="8dp"
+                            android:textAlignment="center"
+                            android:textColor="#142e5c"
+                            android:textSize="9sp"
+                            tools:ignore="SmallSp"
+                            tools:text="@string/imss" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <View
+                    android:id="@+id/separador"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvApellidoMaterno"
+                    tools:layout_editor_absoluteY="230dp" />
+
+                <TextView
+                    android:id="@+id/tvApePaterno"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separador"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="@+id/separador"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDatos" />
+
+                <TextView
+                    android:id="@+id/tvApellidoPaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_apppaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvApePaterno"
+                    app:layout_constraintStart_toStartOf="@+id/separador"
+                    app:layout_constraintTop_toBottomOf="@+id/separador"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApMaterno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/apellidoMaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvApellidoMaterno"
+                    app:layout_constraintHorizontal_bias="0.526"
+                    app:layout_constraintStart_toStartOf="@+id/tvApellidoMaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/separador"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvNombress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_nombres"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNombres"
+                    app:layout_constraintStart_toStartOf="@+id/tvNombres"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApellidoMaterno"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApellidoMaterno"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separador"
+                    app:layout_constraintEnd_toStartOf="@+id/tvNombres"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDatos" />
+
+                <TextView
+                    android:id="@+id/tvNombres"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separador"
+                    app:layout_constraintEnd_toStartOf="@+id/tvNacionalidadRealm"
+                    app:layout_constraintStart_toEndOf="@+id/tvApellidoMaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDatos" />
+
+                <TextView
+                    android:id="@+id/tvNacionalidad"
+                    android:layout_width="0dp"
+                    android:layout_height="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_nacionalidad"
+                    android:textAlignment="center"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvNacionalidadRealm"
+                    app:layout_constraintStart_toStartOf="@+id/tvNacionalidadRealm"
+                    app:layout_constraintTop_toTopOf="@+id/tvNombress"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvNacionalidadRealm"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="bottom|start"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvNacionalidad"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvNombres"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDatos" />
+
+                <View
+                    android:id="@+id/separador2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNombress" />
+
+                <TextView
+                    android:id="@+id/tvCalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_calle"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvCalleRealm"
+                    app:layout_constraintStart_toStartOf="@+id/tvCalleRealm"
+                    app:layout_constraintTop_toBottomOf="@+id/separador2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCalleRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separador2"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="@+id/separador2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApellidoPaterno" />
+
+                <View
+                    android:id="@+id/separador3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCalle" />
+
+                <TextView
+                    android:id="@+id/tvDelegacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/delegacion_municipio"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvApellidoPaterno"
+                    app:layout_constraintStart_toStartOf="@+id/tvApellidoPaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/separador3"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDelegacionRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvDelegacion"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCalle" />
+
+                <View
+                    android:id="@+id/separador4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintStart_toEndOf="@id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvColonia" />
+
+                <TextView
+                    android:id="@+id/tvCiudad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/ciudadPoblacion"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/separador4"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCiudadRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvCiudad"
+                    app:layout_constraintEnd_toEndOf="@+id/separador4"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <View
+                    android:id="@+id/separador5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/separador2"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineDerecha"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCP" />
+
+                <TextView
+                    android:id="@+id/tvEntidadFederativa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/entidadFederativa"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador5"
+                    app:layout_constraintStart_toStartOf="@+id/separador5"
+                    app:layout_constraintTop_toBottomOf="@+id/separador5"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvEntidadRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvEntidadFederativa"
+                    app:layout_constraintEnd_toEndOf="@+id/separador5"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador5"
+                    app:layout_constraintTop_toBottomOf="@+id/tvColonia" />
+
+                <View
+                    android:id="@+id/separador6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/separador7"
+                    app:layout_constraintStart_toStartOf="@+id/separador3"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDelegacion"
+                    tools:layout_editor_absoluteY="361dp" />
+
+                <TextView
+                    android:id="@+id/tvPaisNacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/firma_formulario_pais"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador6"
+                    app:layout_constraintStart_toStartOf="@+id/separador6"
+                    app:layout_constraintTop_toBottomOf="@+id/separador6"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvPaisRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/separador6"
+                    app:layout_constraintEnd_toEndOf="@+id/separador6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador6" />
+
+                <View
+                    android:id="@+id/separador7"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight=".5"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/separador9"
+                    app:layout_constraintStart_toEndOf="@+id/separador6"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCiudad" />
+
+                <TextView
+                    android:id="@+id/tvFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_nacimiento"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador7"
+                    app:layout_constraintStart_toStartOf="@+id/separador7"
+                    app:layout_constraintTop_toBottomOf="@+id/separador7"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvFechaDia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_formato"
+                    android:textColor="#25325b"
+                    android:textSize="8sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvFecha"
+                    app:layout_constraintStart_toStartOf="@+id/tvFecha"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFecha"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvFechaRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separador7"
+                    app:layout_constraintEnd_toEndOf="@+id/separador7"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador7" />
+
+                <View
+                    android:id="@+id/separador8"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/separador5"
+                    app:layout_constraintStart_toEndOf="@id/separador9"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEntidadFederativa" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_rfc"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador8"
+                    app:layout_constraintStart_toStartOf="@+id/separador8"
+                    app:layout_constraintTop_toBottomOf="@+id/separador8"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvRFCRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView13"
+                    app:layout_constraintEnd_toEndOf="@+id/separador8"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador8" />
+
+                <View
+                    android:id="@+id/separador9"
+                    android:layout_width="270dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/separador8"
+                    app:layout_constraintStart_toEndOf="@+id/separador7"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCiudad" />
+
+                <TextView
+                    android:id="@+id/tvCurp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_curp"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador9"
+                    app:layout_constraintStart_toStartOf="@+id/separador9"
+                    app:layout_constraintTop_toBottomOf="@+id/separador9"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCurpRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvCurp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador9"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador9" />
+
+                <View
+                    android:id="@+id/separadorOcupacion"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/separadorEfirma"
+                    app:layout_constraintStart_toStartOf="@+id/separador6"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPaisNacimiento" />
+
+                <TextView
+                    android:id="@+id/tvOcupacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/ocupacion_profesion"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorOcupacion"
+                    app:layout_constraintHorizontal_bias="0.488"
+                    app:layout_constraintStart_toStartOf="@+id/separadorOcupacion"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorOcupacion"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvOcupacionRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separadorEfirma"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorOcupacion"
+                    app:layout_constraintStart_toStartOf="@+id/separadorOcupacion"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFechaDia" />
+
+                <View
+                    android:id="@+id/separadorEfirma"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/separador8"
+                    app:layout_constraintStart_toEndOf="@+id/separadorOcupacion"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCurp" />
+
+                <TextView
+                    android:id="@+id/tvEfirma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/e_firma"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorEfirma"
+                    app:layout_constraintStart_toStartOf="@+id/separadorEfirma"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorEfirma"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvEfirmaRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvEfirma"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorEfirma"
+                    app:layout_constraintStart_toStartOf="@+id/separadorEfirma"
+                    app:layout_constraintTop_toTopOf="@+id/tvOcupacionRealm" />
+
+                <View
+                    android:id="@+id/separadorTelefonoCasa"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="@+id/separadorOcupacion"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOcupacion" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoCasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/telefono_casa"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorTelefonoCasa"
+                    app:layout_constraintStart_toStartOf="@+id/separadorTelefonoCasa"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorTelefonoCasa"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTelefonoCasa"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorTelefonoCasa"
+                    app:layout_constraintStart_toStartOf="@+id/separadorTelefonoCasa" />
+
+                <View
+                    android:id="@+id/separador13"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintStart_toStartOf="@+id/guideline1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOcupacion" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoCelular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/telefono_celular"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador13"
+                    app:layout_constraintStart_toStartOf="@+id/separador13"
+                    app:layout_constraintTop_toBottomOf="@+id/separador13"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoCelularRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTelefonoCelular"
+                    app:layout_constraintEnd_toEndOf="@+id/separador13"
+                    app:layout_constraintStart_toStartOf="@+id/separador13" />
+
+                <View
+                    android:id="@+id/separador14"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorEfirma"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEfirma" />
+
+                <TextView
+                    android:id="@+id/tvOtro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/telefono_otro"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separador14"
+                    app:layout_constraintHorizontal_bias="0.481"
+                    app:layout_constraintStart_toStartOf="@+id/separador14"
+                    app:layout_constraintTop_toBottomOf="@+id/separador14"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoOtroRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvOtro"
+                    app:layout_constraintEnd_toEndOf="@+id/separador14"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/separador14" />
+
+                <TextView
+                    android:id="@+id/tvDisponible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/firma_formulario_disponible"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTelefonoCasa"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTelefonoCasa"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDisponibleRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/horario"
+                    app:layout_constraintEnd_toStartOf="@+id/tvA"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible"
+                    app:layout_constraintTop_toTopOf="@+id/tvAhrRealm"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_a"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDisponible"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvAhrRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:padding="1dp"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/horarioHRS"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHrs"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvA"
+                    app:layout_constraintTop_toTopOf="@+id/tvA"
+                    tools:ignore="SmallSp" />
+
+                <View
+                    android:id="@+id/horario"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/tvA"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible"
+                    app:layout_constraintTop_toTopOf="@+id/tvDisponible" />
+
+                <View
+                    android:id="@+id/horarioHRS"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHrs"
+                    app:layout_constraintStart_toEndOf="@+id/tvA"
+                    app:layout_constraintTop_toTopOf="@+id/tvA" />
+
+                <TextView
+                    android:id="@+id/tvHrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:text="@string/firma_formulario_hrs"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@+id/tvA"
+                    app:layout_constraintTop_toTopOf="@+id/tvA"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDisponible2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/firma_formulario_disponible"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTelefonoCelular"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTelefonoCelular"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDisponible2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="1dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/horario2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvA2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvA2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_a"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDisponible2"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvARealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:padding="1dp"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/horarioHRS2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHrs2"
+                    app:layout_constraintStart_toEndOf="@+id/tvA2"
+                    app:layout_constraintTop_toTopOf="@+id/tvDisponible2Realm"
+                    tools:ignore="SmallSp" />
+
+                <View
+                    android:id="@+id/horario2"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDisponible2"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible2" />
+
+                <View
+                    android:id="@+id/horarioHRS2"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvA2"
+                    app:layout_constraintStart_toEndOf="@+id/tvA2" />
+
+                <TextView
+                    android:id="@+id/tvHrs2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:text="@string/firma_formulario_hrs"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@+id/tvA2"
+                    app:layout_constraintTop_toTopOf="@+id/tvA2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDisponible3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/firma_formulario_disponible"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvTelefonoOtroRealm"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOtro"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDisponible3Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="1dp"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:padding="1dp"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/horario3"
+                    app:layout_constraintEnd_toStartOf="@+id/tvA3"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible3"
+                    app:layout_constraintTop_toTopOf="@+id/tvDisponible3"
+                    tools:ignore="SmallSp" />
+
+
+                <TextView
+                    android:id="@+id/tvA3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_a"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/horario3"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible3"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvA3Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:padding="1dp"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/horarioHRS3"
+                    app:layout_constraintEnd_toStartOf="@+id/tvHrs3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvA3"
+                    app:layout_constraintTop_toTopOf="@+id/tvDisponible3Realm"
+                    tools:ignore="SmallSp" />
+
+                <View
+                    android:id="@+id/horario3"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDisponible3"
+                    app:layout_constraintStart_toEndOf="@+id/tvDisponible3" />
+
+                <View
+                    android:id="@+id/horarioHRS3"
+                    android:layout_width="45dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="1dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvA3"
+                    app:layout_constraintStart_toEndOf="@+id/tvA3" />
+
+                <TextView
+                    android:id="@+id/tvHrs3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="@string/firma_formulario_hrs"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/horarioHRS3"
+                    app:layout_constraintStart_toEndOf="@+id/tvA3"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCorreo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/firma_formulario_correo"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/separadorTelefonoCasa"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDisponible"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvCorreoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:paddingStart="100dp"
+                    android:paddingEnd="0dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/separadorCorreo"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorCorreo"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/separadorCorreo" />
+
+                <View
+                    android:id="@+id/separadorCorreo"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="11dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/separador14"
+                    app:layout_constraintStart_toEndOf="@+id/tvCorreo"
+                    app:layout_constraintTop_toTopOf="@+id/tvCorreo" />
+
+                <View
+                    android:id="@+id/separadorReferencias1"
+                    android:layout_width="592dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/tvParentescoRealm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApellidoRealm" />
+
+                <TextView
+                    android:id="@+id/tvApPaterno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_apppaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvApMaterno_referencia"
+                    app:layout_constraintStart_toStartOf="@+id/separadorReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorReferencias1"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApellidoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvApPaterno"
+                    app:layout_constraintEnd_toStartOf="@+id/tvApMaterno_referencia"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tvReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias1" />
+
+                <TextView
+                    android:id="@+id/tvApMaterno_referencia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_appmaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintStart_toEndOf="@+id/tvApPaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorReferencias1"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApellidoMaternoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvApMaterno_referencia"
+                    app:layout_constraintEnd_toStartOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintStart_toStartOf="@+id/tvApMaterno_referencia"
+                    app:layout_constraintTop_toTopOf="@+id/tvApellidoRealm" />
+
+                <TextView
+                    android:id="@+id/tvnombre_referenecia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_nombres"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorReferencias1"
+                    app:layout_constraintStart_toEndOf="@+id/tvApMaterno_referencia"
+                    app:layout_constraintTop_toTopOf="@+id/tvApMaterno_referencia"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvNombreRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintEnd_toEndOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintStart_toEndOf="@+id/tvApellidoMaternoRealm"
+                    app:layout_constraintTop_toTopOf="@+id/tvApellidoMaternoRealm" />
+
+                <View
+                    android:id="@+id/separadorParentesco"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="49dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/tvReferencias1"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias1" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_documento_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/parentesco"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorParentesco"
+                    app:layout_constraintStart_toStartOf="@+id/separadorParentesco"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorParentesco"
+                    tools:ignore="SmallSp" />
+
+                <View
+                    android:id="@+id/telefonoCasa_referencia"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/tvReferencias1"
+                    app:layout_constraintStart_toStartOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintTop_toBottomOf="@+id/tvnombre_referenecia" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_tel_casa"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoCasa_referencia"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoCasa_referencia"
+                    app:layout_constraintTop_toTopOf="@+id/telefonoCasa_referencia"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoReferenciaRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView16"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoCasa_referencia"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoCasa_referencia" />
+
+                <View
+                    android:id="@+id/telefonoLada_referencia"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/telefonoCasa_referencia"
+                    app:layout_constraintStart_toStartOf="@+id/separadorReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApMaterno_referencia" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_tel_cel"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoLada_referencia"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoLada_referencia"
+                    app:layout_constraintTop_toBottomOf="@+id/telefonoLada_referencia"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoCelularReferenciaRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/telefonoLada_referencia"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoLada_referencia"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoLada_referencia" />
+
+                <View
+                    android:id="@+id/separadorReferencias2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="39dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/separadorParentesco"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tvReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias2" />
+
+                <TextView
+                    android:id="@+id/tvAPellido_referencia2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_apppaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvApMaterno_referencia"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/separadorReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorReferencias2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApellido2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvAPellido_referencia2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvApMaterno_referencia2"
+                    app:layout_constraintStart_toStartOf="@+id/tvReferencias2"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias2" />
+
+                <TextView
+                    android:id="@+id/tvApMaterno_referencia2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_appmaterno"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tvApPaterno"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorReferencias2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvApellidoMaterno2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvApMaterno_referencia2"
+                    app:layout_constraintEnd_toStartOf="@+id/tvnombre_referenecia2"
+                    app:layout_constraintStart_toEndOf="@+id/tvApellido2Realm"
+                    app:layout_constraintTop_toTopOf="@+id/tvApellido2Realm" />
+
+                <TextView
+                    android:id="@+id/tvnombre_referenecia2"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_nombres"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@+id/tvApMaterno_referencia2"
+                    app:layout_constraintTop_toTopOf="@+id/tvApMaterno_referencia2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvNombre2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tvnombre_referenecia2"
+                    app:layout_constraintEnd_toEndOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintStart_toEndOf="@+id/tvApellidoMaterno2Realm"
+                    app:layout_constraintTop_toTopOf="@+id/tvApellidoMaterno2Realm" />
+
+                <View
+                    android:id="@+id/separadorParentesco2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="39dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/tvReferencias1"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineDerecha"
+                    app:layout_constraintTop_toBottomOf="@+id/tvReferencias2" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_entregado_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/parentesco"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorParentesco2"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="@+id/separadorParentesco2"
+                    app:layout_constraintTop_toBottomOf="@+id/separadorParentesco2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvParentesco2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_acuse_entregado_titulo"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorParentesco2"
+                    app:layout_constraintStart_toStartOf="@+id/separadorParentesco2"
+                    app:layout_constraintTop_toTopOf="@+id/tvNombre2Realm" />
+
+                <TextView
+                    android:id="@+id/tvParentescoRealm"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:maxLines="2"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/separadorParentesco"
+                    app:layout_constraintEnd_toEndOf="@+id/separadorParentesco"
+                    app:layout_constraintStart_toStartOf="@+id/separadorParentesco"
+                    app:layout_constraintTop_toTopOf="@+id/tvNombreRealm" />
+
+                <View
+                    android:id="@+id/telefonoCasa_referencia2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="43dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/tvReferencias1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tvnombre_referenecia"
+                    app:layout_constraintTop_toBottomOf="@+id/tvnombre_referenecia2" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_tel_cel"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoLada_referencia2"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoLada_referencia2"
+                    app:layout_constraintTop_toBottomOf="@+id/telefonoLada_referencia2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoReferencia2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/telefionoLada2"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoCasa_referencia2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoCasa_referencia2" />
+
+                <View
+                    android:id="@+id/telefonoLada_referencia2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="#f2f2f2"
+                    android:rotation="0"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/telefonoCasa_referencia"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/separadorReferencias1"
+                    app:layout_constraintTop_toBottomOf="@+id/tvApMaterno_referencia2" />
+
+                <TextView
+                    android:id="@+id/telefionoLada2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/firma_formulario_tel_casa"
+                    android:textColor="#25325b"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoCasa_referencia2"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoCasa_referencia2"
+                    app:layout_constraintTop_toBottomOf="@+id/telefonoCasa_referencia2"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvTelefonoCasaReferencia2Realm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView25"
+                    app:layout_constraintEnd_toEndOf="@+id/telefonoLada_referencia2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/telefonoLada_referencia2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="399dp"
+                    android:layout_height="119dp"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/fondo_boton_firma"
+                    app:layout_constraintBottom_toTopOf="@+id/tvFirmaAviso"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+                    <Button
+                        android:id="@+id/btnFirma"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/firma"
+                        android:layout_width="349dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@color/colorAccent"
+                        android:rotation="0"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/solicitante_ratifica"
+                        android:textColor="#25325b"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/firma"
+                        app:layout_constraintHorizontal_bias="0.494"
+                        app:layout_constraintStart_toStartOf="@+id/firma"
+                        app:layout_constraintTop_toBottomOf="@+id/firma"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/firma"
+                        android:textColor="#25325b"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/textView28"
+                        app:layout_constraintHorizontal_bias="0.502"
+                        app:layout_constraintStart_toStartOf="@+id/textView28"
+                        app:layout_constraintTop_toBottomOf="@+id/textView28"
+                        tools:ignore="SmallSp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="69dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_firma_cancelar"
+                    android:layout_width="261dp"
+                    android:layout_height="45dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/fondo_boton_borde_azul"
+                    android:gravity="center"
+                    android:text="@string/componente_familiar_cancelar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimario"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

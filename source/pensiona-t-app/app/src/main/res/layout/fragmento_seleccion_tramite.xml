@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ImageView
+        android:id="@+id/img_tramite_empleado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/busqueda_imagen_empleado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icono_empleado" />
+
+    <TextView
+        android:id="@+id/txt_tramite_numero_empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tramite_empleado"
+        app:layout_constraintStart_toEndOf="@+id/img_tramite_empleado"
+        app:layout_constraintTop_toTopOf="@+id/img_tramite_empleado" />
+
+    <TextView
+        android:id="@+id/txt_tramite_titular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_tramite_linea1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="65dp"
+        android:background="@color/colorGris"
+        android:rotation="0"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_tramite_empleado" />
+
+    <TextView
+        android:id="@+id/txt_tramite_instrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@string/tramite_instrucciones"
+        android:textAlignment="center"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_tramite_linea1" />
+
+    <Button
+        android:id="@+id/btn_tramite_siguiente"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/fondo_boton_gris"
+        android:text="@string/componente_familiar_siguiente"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_tramite_cancelar"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/fondo_boton_borde_azul"
+        android:text="@string/componente_familiar_cancelar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimario"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tramite_siguiente"
+        app:layout_constraintTop_toTopOf="@+id/btn_tramite_siguiente" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tramite_instrucciones">
+
+        <ScrollView
+            android:id="@+id/view_tramite_izquierda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/btn_tramites_caja2"
+                    android:layout_width="119dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/fondo_borde_gris"
+                    android:elevation="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="@string/tramite_caja2"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_tramite_caja2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tramite_caja2"
+                        android:textColor="@color/colorTextoSecondario"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_tramite_titulo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="34dp"
+                    android:text="@string/tramite_subtipo"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    app:layout_constraintStart_toStartOf="@+id/spinner_tramite_subtipo"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner_tramite_tipo" />
+
+                <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                    android:id="@+id/spinner_tramite_tipo"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/fondo_spinner_borde"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_tramite_titulo1"
+                    app:layout_constraintWidth_max="436dp"
+                    app:layout_constraintWidth_min="300dp" />
+
+                <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                    android:id="@+id/spinner_tramite_subtipo"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/fondo_spinner_borde"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/spinner_tramite_tipo"
+                    app:layout_constraintStart_toStartOf="@+id/spinner_tramite_tipo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_tramite_titulo2" />
+
+                <TextView
+                    android:id="@+id/txt_tramite_titulo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/tramite_tipo"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    app:layout_constraintStart_toStartOf="@+id/spinner_tramite_tipo"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_tramites_caja2" />
+
+                <LinearLayout
+                    android:id="@+id/btn_tramites_caja1"
+                    android:layout_width="119dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/fondo_borde_gris"
+                    android:elevation="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="@string/tramite_caja1"
+                    android:textAllCaps="false"
+                    app:layout_constraintStart_toStartOf="@+id/spinner_tramite_tipo"
+                    app:layout_constraintTop_toTopOf="@+id/btn_tramites_caja2">
+
+                    <TextView
+                        android:id="@+id/txt_tramite_caja1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tramite_caja1"
+                        android:textColor="@color/colorTextoSecondario"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_tramites_caja3"
+                    android:layout_width="119dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/fondo_borde_gris"
+                    android:elevation="0dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="@string/tramite_caja3"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="@+id/spinner_tramite_tipo"
+                    app:layout_constraintTop_toTopOf="@+id/btn_tramites_caja2">
+
+                    <TextView
+                        android:id="@+id/txt_tramite_caja3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tramite_caja3"
+                        android:textColor="@color/colorTextoSecondario"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_tramite_derecha"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_tramite_titulo_ayuda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="38dp"
+                android:textColor="@color/colorPrimario"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_tramite_subtitulo_ayuda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/colorPrimario"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tramite_titulo_ayuda" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_tramite_documentos"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:text="@string/tramite_obligatorios"
+                android:textColor="@color/colorAzulGrisaceo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tramite_subtitulo_ayuda" />
+
+            <View
+                android:id="@+id/view_tramite_circulo"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/circulo_rojo_obligatorios"
+                app:layout_constraintEnd_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tramite_subtitulo_ayuda" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGris"
+        app:layout_constraintBottom_toTopOf="@+id/btn_tramite_siguiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.envio.EnvioMensaje">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarFirma"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_principal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackgroundFloating"
+            android:elevation="4dp"
+            android:minHeight="75dp"
+            app:layout_collapseMode="parallax">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_barra_principal_titulo"
+                    android:layout_width="219dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/finalizacion_trámite"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_barra_principal_subtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/comprobantes_trámite"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/text_barra_principal_titulo"
+                    app:layout_constraintStart_toStartOf="@+id/text_barra_principal_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/text_barra_principal_titulo" />
+
+                <ImageButton
+                    android:id="@+id/btn_cerrar_sesion"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginEnd="27dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/busqueda_imagen_empleado"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_cerrar_sesion" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tv_nombre_solicitante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="253dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarFirma" />
+
+
+    <TextView
+        android:id="@+id/tv_firma_numero_empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tramite_empleado"
+        app:layout_constraintStart_toEndOf="@+id/img_tramite_empleado"
+        app:layout_constraintTop_toTopOf="@+id/img_tramite_empleado" />
+
+    <ImageView
+        android:id="@+id/img_tramite_empleado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/busqueda_imagen_empleado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarFirma"
+        app:srcCompat="@drawable/icono_empleado" />
+
+    <View
+        android:id="@+id/view_barra_abajo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/colorGris"
+        android:rotation="0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_envio_mensaje_otrotramite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_envio_mensaje_otrotramite"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/fondo_boton_borde_azul"
+        android:text="@string/otro_trámite"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimario"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_finalizar" />
+
+    <Button
+        android:id="@+id/btn_finalizar"
+        android:layout_width="261dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/fondo_boton_azul"
+        android:text="@string/finalizar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_folio_tramite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:text="@string/finalizar_folio"
+        android:textColor="@color/colorAzulCeruleo"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nombre_solicitante"
+        app:layout_constraintStart_toStartOf="@+id/tv_nombre_solicitante"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_solicitante" />
+
+
+    <TextView
+        android:id="@+id/tv_capturas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/tv_folio_tramite"
+        app:layout_constraintStart_toStartOf="@+id/tv_folio_tramite"
+        app:layout_constraintTop_toBottomOf="@+id/tv_folio_tramite" />
+
+    <View
+        android:id="@+id/view_tramite_linea1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:background="@color/colorGris"
+        android:rotation="0"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/txt_tramite_instrucciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_capturas" />
+
+    <TextView
+        android:id="@+id/txt_tramite_instrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="@string/finalizar_instrucciones"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_identificacion_cliente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_tramite_linea1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_identificacion_cliente"
+        android:layout_width="339dp"
+        android:layout_height="104dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_tramite_pensiones"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_identificacion_cliente"
+                android:layout_width="189dp"
+                android:layout_height="42dp"
+                android:layout_gravity="clip_horizontal"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="20dp"
+                android:maxLines="2"
+                android:text="@string/finalizar_ver_acuse"
+                android:textColor="@color/colorGrisMedio"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_identificacion_cliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/imss"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_identificacion_cliente"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_pdf_doc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_tramite_pensiones"
+        android:layout_width="339dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView_identificacion_cliente"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView_identificacion_cliente"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_identificacion_cliente">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_tramite_pension"
+                android:layout_width="234dp"
+                android:layout_height="36dp"
+                android:layout_gravity="clip_horizontal"
+                android:layout_marginEnd="20dp"
+                android:maxLines="2"
+                android:text="@string/finalizar_ver_tramite"
+                android:textColor="@color/colorGrisMedio"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_tramite_pensiones"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_tramite_pensiones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/imss"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_tramite_pension"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_pdf_doc" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_correo"
+        android:layout_width="339dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="40dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/guideline">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_correo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/imss"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_sms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icn_enviar_msj" />
+
+            <TextView
+                android:id="@+id/tv_sms"
+                android:layout_width="210dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:text="@string/finalizar_correo"
+                android:textColor="@color/colorGrisMedio"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_sms"
+        android:layout_width="339dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView_correo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView_correo"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_correo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="210dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/finalizar_sms"
+                android:textColor="@color/colorGrisMedio"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/imss"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView19"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icn_enviar_sms" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

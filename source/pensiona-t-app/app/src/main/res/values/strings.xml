@@ -1,0 +1,296 @@
+<resources>
+    <!--<string name="app_name">Pensiona-T</string>-->
+    <!-- Generales -->
+    <string name="error_conexion">Ocurrió un problema, revisa la conexión e intenta nuevamente</string>
+    <string name="error_obtener_documento">Ocurrió un error en la lectura de los documentos</string>
+    <string name="error_crear_directorio">Ocurrió un error en la creación del directorio de imágenes</string>
+    <string name="error_guardar_pdf">Ocurrió un error al guardar el pdf</string>
+    <string name="error_guardar_catalogos">Ocurrió un problema al guardar los catálogos</string>
+    <string name="error_guardar_tramites">Ocurrió un problema al guardar el listado de documentos asociados a los trámites</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="error">ERROR</string>
+    <string name="error_envio">ERROR EN EL ENVÍO</string>
+    <string name="error_conexion_titulo">ERROR DE CONEXIÓN</string>
+    <string name="error_catalogos">ERROR DE CATÁLOGOS</string>
+    <string name="error_motor_cp">El motor de Códigos Postales, no se encuentra instalado</string>
+    <string name="error_motor_imagenes">El motor de Captura de imágenes, no se encuentra instalado</string>
+    <string name="datosIncorrectos">DATOS INCORRECTOS</string>
+    <string name="error_oauth">ERROR TOKEN</string>
+    <string name="contenido">Tu usuario o contraseña son incorrectos, verifica los datos e inténtalo de nuevo. Después de 3 intentos, tu usuario será desactivado</string>
+
+    <!-- Login -->
+    <string name="login_titulo">Pensiona-T</string>
+    <string name="login_hint_usuario">Usuario</string>
+    <string name="login_hint_contrasena">Contraseña</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="login_logo_profuturo">logotipo Profuturo</string>
+    <string name="login_imagen_edificio">imagen edificio oficinas Profuturo</string>
+    <string name="login_icono_alerta_error">imagen de señalización formato inválido</string>
+    <string name="login_error_formato">formato inválido</string>
+    <string name="login_error_permisos">Para el correcto funcionamiento, es necesario aceptar los permisos</string>
+
+    <!-- Busqueda empleado -->
+    <string name="busqueda_imagen_empleado">Imagen generica empleado</string>
+    <string name="busqueda_bienvenido">Bienvenido</string>
+    <string name="busqueda_instrucciones">Para comenzar tu búsqueda, selecciona un tipo de búsqueda e ingresa el dato del cliente</string>
+    <string name="busqueda_empleado">Empleado %1$s</string>
+    <string name="busqueda_buscar">Buscar</string>
+    <string name="busqueda_titulo_spinner">Tipo de búsqueda</string>
+    <string name="busqueda_guardar">Guardar</string>
+
+    <!-- Busqueda empleado Spinner -->
+    <string name="busqueda_hint_busqueda">Dato del cliente</string>
+    <string name="busqueda_hint_nss">Ingresa NSS</string>
+    <string name="busqueda_hint_poliza">Ingresa Póliza</string>
+    <string name="busqueda_hint_oferta">Ingresa Folio oferta</string>
+    <string name="busqueda_hint_curp">Ingresa CURP</string>
+    <string-array name="busqueda_tipo_spinner">
+        <item>Seleccionar</item>
+        <item>NSS</item>
+        <item>Póliza</item>
+        <item>Folio Oferta</item>
+        <item>CURP</item>
+    </string-array>
+
+    <!--Error Busqueda de cliente-->
+    <string name="no_existe_registro">NO EXISTE REGISTRO</string>
+
+    <!-- Cerrar sesión -->
+    <string name="cerrar_sesion_titulo">CERRAR SESIÓN</string>
+    <string name="cerrar_sesion_aviso">Tu sesión será cerrada, los datos ingresados no se guardarán</string>
+    <string name="cerrar_sesion_confirmación">¿Deseas continuar?</string>
+    <string name="cerrar_sesion_si">Si</string>
+    <string name="cerrar_sesion_no">No</string>
+    <string name="cerrar_sesion_icono_alerta">imagen de señalización cierre de sesión</string>
+
+    <!-- Sin datos suficientes-->
+    <string name="caso_cerrado_titulo">SIN DATOS SUFICIENTES</string>
+    <string name="caso_cerrado_aviso">No existen datos suficientes del pensionado</string>
+    <string name="caso_cerrado_confirmacion">¿Deseas precapturar?</string>
+
+    <!-- Grupo familiar -->
+    <string name="componente_familiar_instituto">Instituto</string>
+    <string name="componente_familiar_resultados">%1$s resultados</string>
+    <string name="componente_familiar_resultado">%1$s resultado</string>
+    <string name="componente_familiar_tipo_pension">Tipo de pensión</string>
+    <string name="componente_familiar_estatus">Estatus</string>
+    <string name="componente_familiar_siguiente">Siguiente</string>
+    <string name="componente_familiar_cancelar">Cancelar</string>
+    <string name="componente_familiar_parentesco">Parentesco</string>
+    <string name="componente_familiar_nacimiento">Nacimiento</string>
+    <string name="componente_familiar_sexo">Sexo</string>
+    <string name="componente_familiar_titulo">Datos del cliente</string>
+    <string name="componente_familiar_subtitulo">Selección del solicitante</string>
+    <string name="componente_familiar_cancelar_tramite">CANCELAR TRÁMITE</string>
+    <string name="componente_familiar_cancelar_aviso">El trámite iniciado será cancelado, los datos ingresados no se guardarán</string>
+    <string name="componente_familiar_cancelar_confirmacion">¿Deseas cancelar?</string>
+
+    <!-- Formulario datos generales -->
+    <string name="formulario_instrucciones">Completa los diferentes datos del solicitante\npara proceder con el trámite</string>
+    <string name="formulario_titulo">Formulario de trámite</string>
+    <string name="formulario_subtitulo">Verificación de datos</string>
+    <string name="formulario_general_campos_obligatorios">* Campos obligatorios</string>
+    <string name="formulario_general_formato_invalido">Formato inválido</string>
+    <string name="formulario_general_nombre">Nombre (s)*</string>
+    <string name="formulario_general_appaterno">Apellido paterno*</string>
+    <string name="formulario_general_apmaterno">Apellido materno</string>
+    <string name="formulario_general_nacionalidad_requerido">Nacionalidad*</string>
+    <string name="formulario_general_pais_requerido">País de nacimiento*</string>
+    <string name="formulario_general_nacimiento">Fecha de nacimiento*</string>
+    <string name="formulario_general_ocupacion_requerido">Ocupación/Profesión*</string>
+    <string name="formulario_general_calle">Calle*</string>
+    <string name="formulario_general_numero">Número Exterior*</string>
+    <string name="formulario_general_numero_interior">Número Interior</string>
+    <string name="formulario_general_cp">Código Postal*</string>
+    <string name="formulario_general_colonia_requerido">Colonia*</string>
+    <string name="formulario_general_municipio">Alcaldía / Municipio*</string>
+    <string name="formulario_general_ciudad">Ciudad / Población*</string>
+    <string name="formulario_general_estado">Entidad Federativa / Estado*</string>
+    <string name="formulario_general_curp">CURP*</string>
+    <string name="formulario_general_rfc">RFC*</string>
+    <string name="formulario_general_efirma">E-firma</string>
+    <string name="formulario_general_telefono">Teléfono casa (10 dítigos)</string>
+    <string name="formulario_general_celular">Teléfono celular (10 dígitos)*</string>
+    <string name="formulario_general_otro">Otro teléfono (10 dígitos)</string>
+    <string name="formulario_general_disponible_desde">Disponible desde</string>
+    <string name="formulario_general_disponible_hasta">Disponible hasta</string>
+    <string name="formulario_general_correo">Correo electrónico</string>
+    <string name="formulario_img_progress">icono indicador de progreso de registro de formulario</string>
+
+    <!-- Formulario datos bancarios -->
+    <string name="formulario_banco">Banco*</string>
+    <string name="formulario_tipo_cuenta">Tipo de cuenta*</string>
+    <string name="formulario_cuenta_hint">Cuenta CLABE*</string>
+    <string-array name="tipo_cuenta_spinner">
+        <item>Seleccionar</item>
+        <item>CLABE</item>
+        <item>TELEFONO</item>
+        <item>NUMERO DE TARJETA</item>
+    </string-array>
+    <string name="formulario_banco_hint">Banco del cliente</string>
+    <string name="formulario_tipo_cuenta_hint">Ingresa Tipo de Cuenta</string>
+    <string name="formulario_clabe_hint">Ingresa Póliza</string>
+
+    <!-- Formulario referencias personales -->
+    <string name="formulario_referencias_campos_obligatorios">* Campos obligatorios (una referencia es obligatoria)</string>
+    <string name="formulario_referencias_referencia1">Referencia 1*</string>
+    <string name="formulario_referencias_parentesco">Parentesco*</string>
+    <string name="formulario_referencias_referencia2">Referencia 2</string>
+
+    <!-- Selección de tramite -->
+    <string name="tramite_instrucciones">Elige el tipo de solicitud requerida por el cliente\npara realizar la digitalización de documentos</string>
+    <string name="tramite_tipo">Tipo de trámite</string>
+    <string name="tramite_subtipo">Trámite</string>
+    <string name="tramite_obligatorios">Documentos obligatorios para digitalizar</string>
+    <string name="tramite_titulo">Trámite</string>
+    <string name="tramite_subtitulo">Selección del trámite solicitado</string>
+    <string name="tramite_caja1">Trámite</string>
+    <string name="tramite_caja2">Queja</string>
+    <string name="tramite_caja3">Investigación</string>
+
+    <!-- Digitalizacion -->
+    <string name="digitalizacion_instrucciones">Captura los documentos obligatorios \n requeridos para el trámite</string>
+    <string name="digitalizacion_titulo">Digitalización</string>
+    <string name="digitalizacion_subtitulo">Captura de documentos</string>
+    <string name="digitalizacion_documentos_obligatorios">Documentos obligatorios para digitalizar</string>
+    <string name="digitalizacion_captura_requerida">Capturas del documento (mínimo una):</string>
+    <string name="digitalizacion_observaciones">Observaciones</string>
+    <string name="digitalizacion_obligatorio">OBLIGATORIOS </string>
+    <string name="digitalizacion_atras">imagen que hace referencia al botón atras</string>
+    <string name="digitalizacion_eliminar">imagen que hace referencia al botón eliminar</string>
+    <string name="digitalizacion_eliminar_captura_titulo">ELIMINAR CAPTURA</string>
+    <string name="digitalizacion_eliminar_captura_detalle">La captura del documento será eliminada y no podrá recuperarse </string>
+    <string name="digitalizacion_eliminar_captura_confirmacion">¿Deseas eliminar?</string>
+    <string name="digitalizacion_error_captura">Ocurrió un problema con el motor de imágenes, intenta nuevamente</string>
+
+    <!--Vista Firma -->
+    <string name="firma_ayuda">Firma en el recuadro de abajo</string>
+    <string name="firma_observaciones">Firma lo más parecido a tu identificación oficial</string>
+    <string name="firma_guardar_continuar">Guardar y continuar</string>
+    <string name="firma_excepcion">Excepción</string>
+
+    <!--Dialogo Excepciones -->
+    <string name="excepcion_titulo">EXCEPCIÓN DE FIRMA</string>
+    <string name="excepcion_descripcion">Elige el tipo de excepción por la cual el cliente esta imposibilitado a firmar</string>
+    <string name="excepcion_tipo">Tipo de excepción</string>
+    <string name="excepcion_firma">Excepción de firma</string>
+
+    <!-- Firma Formulario -->
+    <string name="firma_titulo">Firmas de acuse de trámite</string>
+    <string name="formulario_identificación">Formato de Identificación y Servicio al Pensionado</string>
+    <string name="firma_instrucciones">Revisa los datos con el cliente y captura la\n firma en el recuadro correspondiente</string>
+    <string name="datos_solicitante">DATOS DEL SOLICITANTE</string>
+    <string name="privacidad">Importante: Profuturo no realiza cobro alguno de comisiones sobre los montos que liquida mediante transferencias bancarias o disposiciones en efecivo con motivo del pago de su pensión, por lo que en caso de identiﬁcar algún cobro de dicha naturaleza, se solicita llevar a cabo la aclaración correspondiente con su Institución Financiera.\n\n
+
+        Profuturo Pensiones, S.A. DE C.V. (en adelante “Profuturo”) con domicilio en Boulevard Adolfo López Mateos N° 2009, Planta Baja,
+        Colonia Los Alpes, Alcaldía Álvaro Obregón, C.P. 01010, Ciudad de México utilizará estos datos personales proporcionados
+        por usted, con la finalidad de identificarlo y confirmar la información que nos proporciona como Titular de los Datos y
+        realizar la administración de sus pagos de pensión. Así mismo usted debe informar a sus beneficiarios o referencias del
+        uso de sus datos personales por Profuturo de acuerdo con este aviso de privacidad. Si desea conocer mayor detalle de los
+        fines para los cuales serán utilizados sus datos, así como ejercer sus derechos ARCO, puede consultar nuestro Aviso de Privacidad
+        Integral a través de www.profuturo.mx o solicitarlo a la Oficina de Datos Personales, en el teléfono  55580 – 96097 o vía correo
+        electrónico a la dirección: datospersonales@profuturo.com.mx . Agosto 2019.
+    </string>
+    <string name="firma_constar">“Hago constar que en la ﬁrma del presente documento actúo para efectos de éste a nombre y por cuenta propia  Así mismo con la ﬁrma de éste documento declaro que leí y acepto los términos y condiciones del contrato de uso de medios electrónicos, el cual se encuentra disponible en http://www.profuturo.com.mx/pensionespublico/wps/portal/Home/Pensiones” </string>
+    <string name="apellidoMaterno">Apellido Materno</string>
+
+    <string name="external_dir">Acuse</string>
+
+    <!-- Formulario Firma -->
+    <string name="firma_formulario_numero">No. </string>
+    <string name="firma_formulario_colonia">Colonia</string>
+    <string name="firma_formulario_tel_casa">Teléfono Casa (Lada) Número</string>
+    <string name="firma_formulario_tel_cel">Teléfono Celular (Lada) Número</string>
+    <string name="firma_formulario_nombres">Nombre (s)  </string>
+    <string name="firma_formulario_appmaterno">Apellido Materno</string>
+    <string name="firma_formulario_apppaterno">Apellido Paterno</string>
+    <string name="firma_formulario_correo">Correo Electrónico</string>
+    <string name="firma_formulario_hrs">hrs.</string>
+    <string name="firma_formulario_a">a</string>
+    <string name="firma_formulario_disponible">Disponible de</string>
+    <string name="firma_formulario_curp">CURP</string>
+    <string name="firma_formulario_formato">DD / MM / AAAA</string>
+    <string name="firma_formulario_nacimiento">Fecha de Nacimiento</string>
+    <string name="firma_formulario_pais">País de Nacimiento</string>
+    <string name="firma_formulario_calle">Calle</string>
+    <string name="firma_formulario_nacionalidad">Nacionalidad</string>
+    <string name="firma_formulario_referencias_uno">REFERENCIAS PERSONALES (1)</string>
+    <string name="firma_formulario_referencias_dos">REFERENCIAS PERSONALES (2)</string>
+    <string name="firma_formulario_titulo">FORMATO DE IDENTIFICACIÓN Y SERVICIO AL PENSIONADO</string>
+
+    <!-- Formulario Acuse -->
+    <string name="acuse_profuturo">Profuturo Pensiones, S.A. de C.V.</string>
+    <string name="acuse_atencion_pensionados">ATENCIÓN A PENSIONADOS Y CONTROL DE DOCUMENTOS</string>
+    <string name="acuse_solicitud_titulo">SOLICITUD DE TRÁMITE DE PENSIONES</string>
+    <string name="acuse_folio">Folio</string>
+    <string name="acuse_fecha">FECHA Y HORA DE\nRECEPCIÓN:</string>
+    <string name="acuse_poliza_titulo">DATOS DE PÓLIZA</string>
+    <string name="acuse_titular">NOMBRE DEL TITULAR DE PÓLIZA</string>
+    <string name="acuse_nss">NSS</string>
+    <string name="acuse_poliza">PÓLIZA</string>
+    <string name="acuse_grupo">GRUPO DE PAGO</string>
+    <string name="acuse_tipo_tramite">TIPO DE TRÁMITE SOLICITADO</string>
+    <string name="acuse_tramite_titulo">DATOS DEL TRÁMITE</string>
+    <string name="acuse_parentesco">PARENTESCO DEL SOLICITANTE</string>
+    <string name="acuse_nombre">NOMBRE DEL SOLICITANTE</string>
+    <string name="acuse_destino">DESTINO</string>
+    <string name="acuse_tipo_telefono">TIPO DE TELÉFONO</string>
+    <string name="acuse_numero">NÚMERO TELÉFONICO</string>
+    <string name="acuse_horario">HORARIO DE LOCALIZACIÓN</string>
+    <string name="acuse_documentos_titulo">DOCUMENTOS PRESENTADOS</string>
+    <string name="acuse_documento">DOCUMENTO</string>
+    <string name="acuse_entregado">ENTREGADO</string>
+    <string name="acuse_observaciones">OBSERVACIONES</string>
+    <string name="acuse_nombre_firma">NOMBRE Y FIRMA DEL SOLICITANTE</string>
+    <string name="acuse_numero_usuario">NÚMERO USUARIO DE QUIEN RECIBE</string>
+    <string name="acuse_titulo">Formato Solicitud de Trámite de Pensiones</string>
+    <string name="acuse_error_carga">ERROR DE CARGA</string>
+    <string name="acuse_error_confirmacion">¿Deseas reintentar la carga?</string>
+    <string name="regimen_seguridad">RÉGIMEN DE SEGURIDAD</string>
+    <string name="folio_identificador">FOLIO IDENTIFICADOR</string>
+    <string name="seguridad_social">No. DE SEGURIDAD SOCIAL</string>
+    <string name="delegacion_municipio">Delegación / Municipio / Alcaldía</string>
+    <string name="imss">IMSS</string>
+    <string name="isste">ISSSTE</string>
+    <string name="cp">Código Postal</string>
+    <string name="ciudadPoblacion">Ciudad o Población</string>
+    <string name="entidadFederativa">Entidad Federativa / Estado</string>
+    <string name="acuse_sucursal_nombre">TRÁMITES DIGITALES PENSIONES</string>
+
+    <!--Dialogo Confirmacion -->
+    <string name="confirmacion_titulo">ENVÍO REALIZADO</string>
+    <string name="confirmacion_correo">Los formatos han sido enviados al correo electrónico\n %1$s</string>
+    <string name="confirmacion_mensaje">El folio de trámite ha sido enviado al número celular %1$s</string>
+
+    <!--Test Pruebas Unitarias -->
+    <string name="text_hello_word">se realizo correctamente la petición</string>
+    <string name="respuesta">se realizo correctamente la petición</string>
+    <string name="telefono_casa">Teléfono Casa (Lada) Número</string>
+    <string name="telefono_celular">Teléfono Celular (Lada) Número</string>
+    <string name="telefono_otro">Otro (Lada) Número</string>
+    <string name="e_firma">E-Firma (Nº de serie de certificado)</string>
+    <string name="ocupacion_profesion">Ocupación / Profesión / Actividad / Giro</string>
+    <string name="firma_rfc">RFC</string>
+    <string name="parentesco">Parentesco</string>
+    <string name="solicitante_ratifica">El solicitante ratiﬁca los datos contenidos en este formato</string>
+    <string name="firma">FIRMA</string>
+
+    <!-- mensaje de envio-->
+    <string name="otro_trámite">Otro trámite</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="finalizacion_trámite">Finalización de trámite</string>
+    <string name="comprobantes_trámite">Entrega de comprobantes de trámite</string>
+    <string name="finalizar_folio">Folio de trámite %1$s</string>
+    <string name="finalizar_numero_capturas">%d capturas realizadas</string>
+    <string name="finalizar_sms_mensaje">Apreciable cliente: hemos registrado tu tramite con el folio %1$s</string>
+    <string name="finalizar_instrucciones">Selecciona la vía de entrega de los comprobantes al cliente</string>
+    <string name="finalizar_sms">Enviar notificación de trámite por SMS </string>
+    <string name="finalizar_correo">Enviar Formatos de trámite por correo electrónico</string>
+    <string name="finalizar_ver_tramite">Descarga de Formato de Solicitud de Trámite de Pensiones</string>
+    <string name="finalizar_ver_acuse">Descarga Formato de Identificación del Cliente</string>
+
+
+    <string name="error_motor_mau">Para continuar con el proceso es necesario instalar el motor de autenticación universal</string>
+    <string name="messaje_autentication">Para poder continuar con el proceso, el usuario debe realizar una autenticación, y contar con algún medio disponible:\n\n-Teléfono celular\n-Correo electrónico\n-Identificación INE o Pasaporte\n-Acceso a internet\n\n\n¿El usuario cuenta con algún medio disponible?</string>
+
+</resources>

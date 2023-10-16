@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: BuildConfig
+    metadata:
+      name: "profuturo-pensiones-app-pipeline"
+      labels:
+        app: "profuturo-pensiones-app"
+    spec:
+      source:
+        git:
+          ref: "develop"
+          uri: "https://steps.everis.com/git/PROFUTURO/android.git"
+        sourceSecret:
+          name: "gitbasicauth"
+      strategy:
+        jenkinsPipelineStrategy:
+          jenkinsfilePath: dev.jenkisfile

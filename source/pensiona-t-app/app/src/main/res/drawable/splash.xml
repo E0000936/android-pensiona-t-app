@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/fondo_gradiente" />
+    <item
+        android:width="257dp"
+        android:height="129dp"
+        android:gravity="center">
+        <bitmap android:src="@drawable/logo_profuturo_blanco" />
+    </item>
+</layer-list>

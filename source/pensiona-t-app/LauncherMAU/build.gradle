@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: 'properties.gradle'
+
+android {
+    namespace 'com.mx.profuturo.grupo.launchermau'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+
+        versionCode 1
+        versionName '1.0.0'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    libraryVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            if (outputFile != null && outputFileName.endsWith('.aar')) {
+                outputFileName = "LauncherMAU" + "-" + getCurrentGitBranch() + "-" + variant.name + ".aar"
+            }
+        }
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    buildTypes {
+        debug {
+            debuggable = true
+            minifyEnabled false
+            buildConfigField 'String', 'MAU_SERVER', "\"$MAU_DEV_SERVER\""
+            buildConfigField 'String', 'API_TOKEN', "\"$MAU_API_TOKEN_DEV_SERVER\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        qa {
+            debuggable = true
+            minifyEnabled false
+            buildConfigField 'String', 'MAU_SERVER', "\"$MAU_QA_SERVER\""
+            buildConfigField 'String', 'API_TOKEN', "\"$MAU_API_TOKEN_QA_SERVER\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable = false
+            minifyEnabled false
+            buildConfigField 'String', 'MAU_SERVER', "\"$MAU_RELEASE_SERVER\""
+            buildConfigField 'String', 'API_TOKEN', "\"$MAU_API_TOKEN_RELEASE_SERVER\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    //GSON converter
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //OkHttpClient
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.11.0"
+    //Live data
+    implementation "androidx.lifecycle:lifecycle-livedata:2.5.1"
+
+}
+
+def getCurrentGitBranch() {
+    def gitBranch = "Unknown branch"
+    try {
+        def workingDir = new File("${project.projectDir}")
+        def result = 'git rev-parse --abbrev-ref HEAD'.execute(null, workingDir)
+        result.waitFor()
+        if (result.exitValue() == 0) {
+            gitBranch = result.text.trim()
+        }
+    } catch (ignored) {
+    }
+    return gitBranch
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#004B8D</color>
+    <color name="colorPrimario">#004b8d</color>
+    <color name="colorPrimarioObscuro">#0c2340</color>
+    <color name="colorLimpio">#BDBDBD</color>
+    <color name="colorRojoVívido">#d0021b</color>
+    <color name="colorTextoElemento">#525252</color>
+    <color name="colorListaTexto">#98a0a8</color>
+    <color name="colorFondoGris">#fafafa</color>
+    <color name="colorFondoBlanco">#dcdcdc</color>
+    <color name="colorElementoSeleccionado">#F2F2F2</color>
+    <color name="colorTextoSecondario">#9b9b9b</color>
+    <color name="colorGris">#e8e8e8</color>
+    <color name="colorFondo">#f2f2f2</color>
+    <color name="colorTextSubtitle">#1e366c</color>
+    <color name="colorAzulFuerte">#142e5c</color>
+    <color name="colorGrisClaro">#c5c5c5</color>
+    <color name="colorNaranja">#ff5500</color>
+    <color name="colorAzulGrisaceo">#374047</color>
+    <color name="colorAzulCielo">#5190c5</color>
+    <color name="colorAzulCeruleo">#0181c4</color>
+    <color name="colorGrisMedio">#4a4a4a</color>
+    <color name="colorGrisPalido">#fff6faff</color>
+    <color name="colorTransparente">#00ffffff</color>
+    <color name="colorAzulClaro">#80f9fdff</color>
+    <!--colores para la libreria ProgressBar-->
+    <color name="light_blue">#69d3ff</color>
+    <color name="light_blue_unselected">#8069d3ff</color>
+    <color name="text_label_unselected">#66ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="cerulean">#0181C4</color>
+    <color name="coloGrisTabla">#d8dae2</color>
+    <!--<string name="app_name">CustomProgressBar</string>-->
+    <style name="CustomProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="colorButtonNormal">@color/light_blue</item>
+        <item name="colorControlActivated">@color/light_blue</item>
+        <item name="colorControlHighlight">@color/light_blue</item>
+        <item name="android:progressDrawable">@drawable/progress_bar</item>
+        <item name="android:maxHeight">2dp</item>
+    </style>
+</resources>

@@ -1,0 +1,196 @@
+import groovy.json.JsonSlurper
+
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply from: '../gradle-scripts/properties.gradle'
+
+
+android {
+    namespace 'com.mx.profuturo.android.pensionat'
+    compileSdk 33
+
+
+    defaultConfig {
+        namespace 'com.mx.profuturo.android.pensionat'
+        minSdkVersion 21
+        targetSdkVersion 33
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        vectorDrawables.useSupportLibrary = true
+
+        ext.construccion = project.hasProperty('construccion') ?
+                project.getProperty('construccion') : 1
+        def jsonDevops = readJsonDevops()
+        def branch = getCurrentGitBranch()
+
+        def vc = jsonDevops.versionCode
+        def vn = jsonDevops.versionMayor + '.' + jsonDevops.versionMenor + '.' + jsonDevops.feature + '.' + jsonDevops.hotFix
+        versionCode vc.toInteger()
+        versionName vn
+        applicationVariants.configureEach { variant ->
+            variant.outputs.all {
+                def apkName = rootProject.name + '-' + branch + '-' + variant.name +
+                        '-' + jsonDevops.versionMayor + '.' + jsonDevops.versionMenor + '.' + jsonDevops.feature +
+                        '.' + jsonDevops.hotFix +
+                        '.apk'
+                outputFileName = "${apkName}"
+            }
+        }
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    signingConfigs {
+        release {
+            storeFile file(KEYSTORE_PATH)
+            storePassword KEYSTORE_PASSWORD
+            keyAlias KEYSTORE_KEY_ALIAS
+            keyPassword KEYSTORE_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        debug {
+            resValue "string", "app_name", rootProject.name + " Desarrollo"
+            minifyEnabled false
+            buildConfigField "String", "PROFUTURO_SERVER", PROFUTURO_DEVELOP_SERVER
+            buildConfigField("String", "BASIAUTH2_0", BASIC_AUTH2_DEVELOP)
+            buildConfigField("String", "APP_NAME", "\"" + rootProject.name + "\"")
+            resValue("string", "login_version", "Versión " + defaultConfig.versionName)
+            testCoverageEnabled true
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+        qa {
+            resValue "string", "app_name", rootProject.name + " QA"
+            minifyEnabled false
+            buildConfigField "String", "PROFUTURO_SERVER", PROFUTURO_STAGE_SERVER
+            buildConfigField("String", "BASIAUTH2_0", BASIC_AUTH2_STAGE)
+            buildConfigField("String", "APP_NAME", "\"" + rootProject.name + "\"")
+            resValue("string", "login_version", "Versión " + defaultConfig.versionName)
+            testCoverageEnabled true
+            signingConfig signingConfigs.release
+            debuggable true
+        }
+        release {
+            resValue "string", "app_name", rootProject.name
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "PROFUTURO_SERVER", PROFUTURO_PRO_SERVER
+            buildConfigField("String", "BASIAUTH2_0", BASIC_AUTH2_PRO)
+            buildConfigField("String", "APP_NAME", "\"" + rootProject.name + "\"")
+            resValue("string", "login_version", "Versión " + defaultConfig.versionName)
+            signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions "content"
+    productFlavors {
+        MainConfig {
+            dimension "content"
+        }
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets', 'src\\assets', 'assets'
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation supportDependencies.appcompat
+    implementation supportDependencies.constraint
+    implementation supportDependencies.gridlayout
+    implementation supportDependencies.cardview
+    implementation supportDependencies.recyclerview
+    implementation supportDependencies.supportv4
+    implementation supportDependencies.design
+    implementation testingDependencies.junit
+    implementation testingDependencies.runner
+    implementation elementalDependencies.volley
+    implementation elementalDependencies.gson
+
+    //implementation platform('com.google.firebase:firebase-bom:28.3.1')
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.1'
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
+
+    implementation project(path: ':LauncherMAU')
+
+
+    testImplementation testingDependencies.espresso
+    testImplementation testingDependencies.mockito
+    testImplementation testingDependencies.json
+}
+
+/** SE VALIDA LA EXISTENCIA DEL ARCHIVO JSON PATA LA IMPLEMENTACION DE LOS PLUGINS **/
+if (file("google-services.json").exists()) {
+    apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'com.google.firebase.crashlytics'
+}
+/** == **/
+
+def getCurrentGitBranch() {
+    def gitBranch = "Unknown branch"
+    try {
+        def workingDir = new File("${project.projectDir}")
+        def result = 'git rev-parse --abbrev-ref HEAD'.execute(null, workingDir)
+        result.waitFor()
+        if (result.exitValue() == 0) {
+            gitBranch = result.text.trim()
+        }
+    } catch (e) {
+        e.printStackTrace()
+    }
+    return gitBranch
+}
+
+def readJsonDevops() {
+    println("llamada a metodo readJsonDevops")
+    def json = file("${projectDir}/assets/devops.json")
+    def parsed = new JsonSlurper().parseText(json.text)
+    return parsed
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name.startsWith("bundle")) {
+        def renameTaskName = "rename${task.name.capitalize()}Aab"
+        def deleteTaskName = "delete${task.name.capitalize()}Aab"
+        def flavor = task.name.substring("bundle".length())
+        def renameTask = tasks.create(renameTaskName, Copy) {
+            def jsonDevops = readJsonDevops()
+            def branch = getCurrentGitBranch()
+            def bundleName = rootProject.name + '-' + branch + '-' + flavor + '-' + jsonDevops.versionMayor +
+                    '.' + jsonDevops.versionMenor + '.' + jsonDevops.feature + '.' +
+                    jsonDevops.hotFix + '.aab'
+            def path = "${buildDir}/outputs/bundle/${flavor}/"
+            from(path)
+            destinationDir file(path)
+            rename '.*aab', bundleName
+        }
+        def deleteTask = tasks.create(deleteTaskName, Delete) {
+            def jsonDevops = readJsonDevops()
+            def branch = getCurrentGitBranch()
+            def bundleName = rootProject.name + '-' + branch + '-' + flavor + '-' + jsonDevops.versionMayor +
+                    '.' + jsonDevops.versionMenor + '.' + jsonDevops.feature + '.' +
+                    jsonDevops.hotFix + '.aab'
+            def path = "${buildDir}/outputs/bundle/${flavor}/"
+            delete fileTree(path) {
+                exclude bundleName
+            }
+        }
+        task.finalizedBy(renameTaskName)
+        renameTask.finalizedBy(deleteTask)
+    }
+}
+

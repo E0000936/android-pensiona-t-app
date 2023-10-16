@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorFondo">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar_acuse"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_acuse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackgroundFloating"
+            android:elevation="4dp"
+            android:minHeight="75dp"
+            app:layout_collapseMode="parallax">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_barra_acuse_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/firma_titulo"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_barra_principal_subtitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/acuse_titulo"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/text_barra_acuse_titulo"
+                    app:layout_constraintStart_toStartOf="@+id/text_barra_acuse_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/text_barra_acuse_titulo" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_acuse_atras"
+                    android:layout_width="52dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="27dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/digitalizacion_atras"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/flecha_atras" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txt_acuse_instrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/firma_instrucciones"
+        android:textAlignment="center"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar_acuse" />
+
+    <TextView
+        android:id="@+id/txt_tramite_numero_empleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorAzulGrisaceo"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_tramite_empleado"
+        app:layout_constraintStart_toEndOf="@+id/img_tramite_empleado"
+        app:layout_constraintTop_toTopOf="@+id/img_tramite_empleado" />
+
+    <ImageView
+        android:id="@+id/img_tramite_empleado"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/busqueda_imagen_empleado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar_acuse"
+        app:srcCompat="@drawable/icono_empleado" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorFondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_acuse_instrucciones"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="65dp"
+                android:background="@color/white"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="556dp">
+
+                <TextView
+                    android:id="@+id/txt_acuse_localizacion_tres"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_numero_tres"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_localizacion_dos" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_datos_poliza"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@color/colorAzulFuerte"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/acuse_poliza_titulo"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_fecha" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="134dp"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="42dp"
+                    android:contentDescription="@string/login_logo_profuturo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_profuturo_color" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_profuturo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/acuse_profuturo"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_atencion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/acuse_atencion_pensionados"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_profuturo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/acuse_solicitud_titulo"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_atencion" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@color/colorAzulFuerte"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_folio" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_titulo_folio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/acuse_folio"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_folio"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_folio"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_titulo" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidline_mitad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_folio"
+                    android:layout_width="0dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guidline_mitad"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_titulo_folio"
+                    app:layout_constraintWidth_percent="0.3" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_fecha"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_fecha_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/acuse_fecha"
+                    android:textAlignment="textEnd"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_acuse_fecha"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_nombre_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_titular"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintWidth_percent=".7"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_nss_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_nss"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_nombre_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_datos_poliza"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_nombre"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_acuse_nss_titulo"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_nombre_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_nss"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_nombre"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_nss_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_poliza_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_poliza"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_nombre"
+                    app:layout_constraintWidth_percent=".16"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_grupo"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_poliza_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_nombre"
+                    app:layout_constraintWidth_percent=".16"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_tipo_tramite"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_nombre"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_poliza"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView12"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_poliza_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_grupo_pago"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView13"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_poliza"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tramite"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_datos_poliza"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_grupo_pago"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tramite_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@color/colorAzulFuerte"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/acuse_tramite_titulo"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_poliza" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_parentesco_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_parentesco"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintWidth_percent="0.24"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_solicitante_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_nombre"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_acuse_nss_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_parentesco_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tramite_titulo"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_destino_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_destino"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_solicitante_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tramite_titulo"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_parentesco"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="bottom|center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_acuse_tipo_telefono"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_acuse_solicitante_titulo"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toTopOf="@+id/txt_acuse_solicitante" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_solicitante"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="bottom|center"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_acuse_sucursal"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_acuse_destino_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_parentesco"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_solicitante_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_sucursal"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="bottom|center"
+                    android:padding="3dp"
+                    android:text="@string/acuse_sucursal_nombre"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toTopOf="@+id/textView9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_solicitante"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_solicitante_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tipo_telefono"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_tipo_telefono"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toTopOf="@+id/txt_acuse_telefono"
+                    app:layout_constraintWidth_percent="0.33"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_telefono"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_numero"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_tipo_telefono"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_solicitante"
+                    app:layout_constraintWidth_percent="0.33"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_horario"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_telefono"
+                    app:layout_constraintTop_toTopOf="@+id/txt_acuse_telefono"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tipo_telefono_uno"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tipo_telefono"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tipo_telefono" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tipo_telefono_dos"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tipo_telefono"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tipo_telefono_uno" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_tipo_telefono_tres"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tipo_telefono"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_tipo_telefono_dos" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_numero_uno"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_tipo_telefono_uno"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_telefono" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_numero_dos"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_tipo_telefono_dos"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_numero_uno" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_numero_tres"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView9"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_tipo_telefono_tres"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_numero_dos" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_localizacion_uno"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_numero_uno"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_localizacion_dos"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_acuse_tramite_titulo"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_numero_dos"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_localizacion_uno" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_documentos_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@color/colorAzulFuerte"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/acuse_documentos_titulo"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_localizacion_tres" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_observaciones_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@color/colorAzulFuerte"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/acuse_observaciones"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_acuse_documentos" />
+
+                <EditText
+                    android:id="@+id/txt_acuse_comentarios"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/fondo_borde_celdas"
+                    android:ems="10"
+                    android:inputType="none|textMultiLine"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzulGrisaceo"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_observaciones_titulo" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_acuse_firma"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="110dp"
+                    android:background="@drawable/fondo_boton_firma"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_comentarios"
+                    app:layout_constraintWidth_percent="0.43">
+
+                    <TextView
+                        android:id="@+id/txt_acuse_nombre_solicitante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintBottom_toTopOf="@+id/view6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <View
+                        android:id="@+id/view6"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="31dp"
+                        android:layout_marginEnd="31dp"
+                        android:layout_marginBottom="34dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_acuse_firma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:text="@string/acuse_nombre_firma"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="95dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    app:layout_constraintWidth_percent="0.33" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_acuse_documentos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_documento_titulo" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_documento_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acuse_documento"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_acuse_documentos_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_documentos_titulo"
+                    app:layout_constraintWidth_percent="0.7"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_entregado_titulo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="35dp"
+                    android:text="@string/acuse_entregado"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_acuse_documento_titulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_documentos_titulo"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:text="@string/acuse_numero_usuario"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view7"
+                    app:layout_constraintStart_toStartOf="@+id/view7"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_acuse_comentarios" />
+
+                <TextView
+                    android:id="@+id/txt_acuse_numero_empleado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/view7"
+                    app:layout_constraintEnd_toEndOf="@+id/view7"
+                    app:layout_constraintStart_toStartOf="@+id/view7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="69dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_acuse_cancelar"
+                    android:layout_width="261dp"
+                    android:layout_height="45dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/fondo_boton_borde_azul"
+                    android:gravity="center"
+                    android:text="@string/componente_familiar_cancelar"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimario"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_formulario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/separador1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/colorGris"
+            android:rotation="0"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_formulario_siguiente"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_formulario_siguiente"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fondo_boton_gris"
+            android:text="@string/componente_familiar_siguiente"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <Button
+            android:id="@+id/btn_formulario_cancelar"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/fondo_boton_borde_azul"
+            android:text="@string/componente_familiar_cancelar"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimario"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_formulario_siguiente"
+            app:layout_constraintWidth_percent="0.25" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_formulario_contenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="29dp"
+            android:paddingStart="65dp"
+            android:paddingEnd="65dp"
+            app:layout_constraintBottom_toBottomOf="@id/separador1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/formulario_general_campos_obligatorios"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_numero_interior"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintStart_toEndOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_calle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_numero_interior"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789 "
+                    android:hint="@string/formulario_general_numero_interior"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_calle"
+                    android:nextFocusRight="@id/edt_formulario_cp"
+                    android:nextFocusDown="@id/edt_formulario_cp"
+                    android:nextFocusForward="@id/edt_formulario_cp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_estado"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_municipio">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_estado"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_estado"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="200"
+                    android:nextFocusLeft="@id/edt_formulario_ciudad"
+                    android:nextFocusRight="@id/edt_formulario_curp"
+                    android:nextFocusDown="@id/edt_formulario_curp"
+                    android:nextFocusForward="@id/edt_formulario_curp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_ciudad"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_municipio">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_ciudad"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_ciudad"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="200"
+                    android:nextFocusLeft="@id/edt_formulario_municipio"
+                    android:nextFocusRight="@id/edt_formulario_estado"
+                    android:nextFocusDown="@id/edt_formulario_estado"
+                    android:nextFocusForward="@id/edt_formulario_estado"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_municipio"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_numero">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_municipio"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_municipio"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="200"
+                    android:nextFocusLeft="@id/spinner_formulario_colonia"
+                    android:nextFocusRight="@id/edt_formulario_ciudad"
+                    android:nextFocusDown="@id/edt_formulario_ciudad"
+                    android:nextFocusForward="@id/edt_formulario_ciudad"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                android:id="@+id/spinner_formulario_colonia"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/fondo_spinner_borde"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_formulario_colonia" />
+
+            <TextView
+                android:id="@+id/textView_formulario_colonia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/formulario_general_colonia_requerido"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorTextoElemento"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_calle" />
+
+            <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                android:id="@+id/spinner_formulario_profesion"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/fondo_spinner_borde"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_formulario_profesion" />
+
+            <TextView
+                android:id="@+id/textView_formulario_profesion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/formulario_general_ocupacion_requerido"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorTextoElemento"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_nacimiento" />
+
+            <TextView
+                android:id="@+id/textView_formulario_nacimiento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="7dp"
+                android:text="@string/formulario_general_pais_requerido"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorTextoElemento"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_appaterno" />
+
+            <TextView
+                android:id="@+id/linea2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="29dp"
+                android:background="@color/colorFondoBlanco"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_formulario_dhtelefono"
+                app:layout_constraintStart_toEndOf="@+id/layout_formulario_celular"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_telefono" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_correo"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_ddcelular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_correo"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789@_.!#$%'*+-/"
+                    android:hint="@string/formulario_general_correo"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="100"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".84" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_ddotro"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintStart_toEndOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_otro">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_ddotro"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_desde"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_dhotro"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline9"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_otro">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_dhotro"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_hasta"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_ddcelular"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_celular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_ddcelular"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_desde"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_dhcelular"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toEndOf="@+id/guideline8"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_celular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_dhcelular"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_hasta"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_dhtelefono"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_telefono">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_dhtelefono"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_hasta"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_ddtelefono"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_telefono">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_ddtelefono"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_disponible_desde"
+                    android:inputType="time" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_otro"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_celular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_otro"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/formulario_general_otro"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_celular"
+                    android:nextFocusRight="@id/edt_formulario_correo"
+                    android:nextFocusDown="@id/edt_formulario_correo"
+                    android:nextFocusForward="@id/edt_formulario_correo"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_celular"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_telefono">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_celular"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/formulario_general_celular"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_telefono"
+                    android:nextFocusRight="@id/edt_formulario_otro"
+                    android:nextFocusDown="@id/edt_formulario_otro"
+                    android:nextFocusForward="@id/edt_formulario_otro"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_telefono"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_curp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_telefono"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/formulario_general_telefono"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_efirma"
+                    android:nextFocusRight="@id/edt_formulario_celular"
+                    android:nextFocusDown="@id/edt_formulario_celular"
+                    android:nextFocusForward="@id/edt_formulario_celular"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_efirma"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_rfc">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_efirma"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/formulario_general_efirma"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="50"
+                    android:nextFocusLeft="@id/edt_formulario_rfc"
+                    android:nextFocusRight="@id/edt_formulario_telefono"
+                    android:nextFocusDown="@id/edt_formulario_telefono"
+                    android:nextFocusForward="@id/edt_formulario_telefono"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_rfc"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_curp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_rfc"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                    android:hint="@string/formulario_general_rfc"
+                    android:inputType="textCapCharacters|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_curp"
+                    android:nextFocusRight="@id/edt_formulario_efirma"
+                    android:nextFocusDown="@id/edt_formulario_efirma"
+                    android:nextFocusForward="@id/edt_formulario_efirma"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_curp"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_estado">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_curp"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                    android:hint="@string/formulario_general_curp"
+                    android:inputType="textCapCharacters|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="18"
+                    android:nextFocusLeft="@id/edt_formulario_estado"
+                    android:nextFocusRight="@id/edt_formulario_rfc"
+                    android:nextFocusDown="@id/edt_formulario_rfc"
+                    android:nextFocusForward="@id/edt_formulario_rfc"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_cp"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="10dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline9"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_calle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_cp"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="@string/formulario_general_cp"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:nextFocusLeft="@id/edt_formulario_numero_interior"
+                    android:nextFocusRight="@id/edt_formulario_municipio"
+                    android:nextFocusDown="@id/edt_formulario_municipio"
+                    android:nextFocusForward="@id/edt_formulario_municipio"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_numero"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toEndOf="@+id/guideline8"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_calle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_numero"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789 "
+                    android:hint="@string/formulario_general_numero"
+                    android:inputType="textCapCharacters|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="10"
+                    android:nextFocusLeft="@id/edt_formulario_calle"
+                    android:nextFocusRight="@id/edt_formulario_numero_interior"
+                    android:nextFocusDown="@id/edt_formulario_numero_interior"
+                    android:nextFocusForward="@id/edt_formulario_numero_interior"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_calle"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_formulario_profesion">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_calle"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ0123456789 "
+                    android:hint="@string/formulario_general_calle"
+                    android:inputType="textCapCharacters|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="250"
+                    android:nextFocusRight="@id/edt_formulario_numero"
+                    android:nextFocusDown="@id/edt_formulario_numero"
+                    android:nextFocusForward="@id/edt_formulario_numero"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_nacimiento"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_apmaterno">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_nacimiento"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:hint="@string/formulario_general_nacimiento"
+                    android:inputType="date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                android:id="@+id/spinner_formulario_nacionalidad"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/fondo_spinner_borde"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_formulario_nacionalidad" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_appaterno"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_nombre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_appaterno"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_appaterno"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="50"
+                    android:nextFocusLeft="@id/edt_formulario_nombre"
+                    android:nextFocusRight="@id/edt_formulario_apmaterno"
+                    android:nextFocusDown="@id/edt_formulario_apmaterno"
+                    android:nextFocusForward="@id/edt_formulario_apmaterno"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_nombre"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_nombre"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_nombre"
+                    android:inputType="text|textVisiblePassword|textNoSuggestions"
+                    android:maxLength="50"
+                    android:nextFocusRight="@id/edt_formulario_appaterno"
+                    android:nextFocusDown="@id/edt_formulario_appaterno"
+                    android:nextFocusForward="@id/edt_formulario_appaterno"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_formulario_apmaterno"
+                style="@style/InputLayoutCaja"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="15dp"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline6"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_nombre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_formulario_apmaterno"
+                    style="@style/EditTextCaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóúÁÉÍÓÚ "
+                    android:hint="@string/formulario_general_apmaterno"
+                    android:imeOptions="actionDone"
+                    android:maxLength="50"
+                    android:nextFocusLeft="@id/edt_formulario_appaterno"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineIzquierda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".33" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".66" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.16" />
+
+            <TextView
+                android:id="@+id/linea1"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="29dp"
+                android:background="@color/colorFondoBlanco"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_formulario_dhtelefono"
+                app:layout_constraintStart_toEndOf="@+id/layout_formulario_telefono"
+                app:layout_constraintTop_toTopOf="@+id/layout_formulario_telefono" />
+
+            <TextView
+                android:id="@+id/textView_formulario_nacionalidad"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/formulario_general_nacionalidad_requerido"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorTextoElemento"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineIzquierda"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_formulario_nombre" />
+
+            <com.mx.profuturo.android.pensionat.vistasCustomizadas.SpinnerCaja
+                android:id="@+id/spinner_formulario_pais"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="7dp"
+                android:background="@drawable/fondo_spinner_borde"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                app:layout_constraintStart_toEndOf="@+id/guidelineIzquierda"
+                app:layout_constraintTop_toBottomOf="@+id/textView_formulario_nacimiento" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

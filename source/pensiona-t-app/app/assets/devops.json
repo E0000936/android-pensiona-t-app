@@ -1,0 +1,13 @@
+{
+  "type": "app",
+  "properties": {
+    "flavor": [
+      "MainConfig"
+    ]
+  },
+  "versionMayor": "1",
+  "versionMenor": "2",
+  "feature": "8",
+  "hotFix": "0",
+  "versionCode": "22"
+}
